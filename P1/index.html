@@ -1,178 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>CSS Website Layout</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-  border-color:red;  
-  border-style: solid;
-  border-width: 1px;
-}
+  <head>
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8" />
+    <title>Indice</title>
+    <meta name="description" content="Indice" />
+    <meta name="author" content="David Peinado" />
 
-body {
-  margin: 0;
-}
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-/* Style the header */
-.header {
-  background-color: silver;
-  padding: 20px;
-  text-align: center;
-}
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-/* Style the footer */
-.footer {
-  background-color: silver;
-  padding: 20px;
-  text-align: center;
-}
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/skeleton.css" />
 
-.fakeimg {
-  background-color: cyan;
-  width: 100%;
-  padding: 20px;
-}
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+  </head>
 
-/* Add a card effect for books */
-.card {
-  background-color: yellow;
-  padding: 20px;
-  margin-top: 20px;
-}
-
-/* Style the header */
-.card h3 {
-  background-color: silver;
-}
-
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 15px;
-
-}
-
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 50%;
-}
-
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 50%;
-  background-color: #f1f1f1;
-  padding-left: 20px;
-}
-
-.row.leftcolumn {
-  height: 500px;
-}
-
-.row.rightcolumn {
-  height: 500px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width:600px) {
-  .column {
-    width: 100%;
-  }
-}
-</style>
-</head>
-<body>
-
-<div class="header">
-  <div class="row">
-    <div class="column">
-      <div class="fakeimg">
-        imagen
-      </div>
-    </div>
-    <div class="column">
-      TITULO
-    </div>
-    <div class="column">
-      <form action="/registro.php">
-      Usuario: <input type="text" name="Usuario"><br>
-      Contraseña: <input type="text" name="Contraseña"><br>
-      <input type="submit" value="Enviar"><br>
-      <a href="#">Formulario de registro</a>
-</form>
-    </div>
-  </div>
-
-</div>
-
-
-<div class="row">
-  <div class="leftcolumn">
-      <div class="fakeimg">
-          imagen
-        </div>
-        <div class="fakeimg">
-            imagen
+  <body>
+    <container>
+      <header>
+        <div class="row">
+          <div class="three columns">
+            <img
+              src="https://images.freeimages.com/images/large-previews/c8e/books-1478715.jpg"
+            />
           </div>
-          <div class="fakeimg">
-              imagen
-            </div>
-  </div>
-  
-  <div class="rightcolumn">
-    <h2>Libros populares</h2>
-    <div class="card">
-      
-      	<div class="fakeimg"><p>Image</p></div>
-        
-      <div class="column">
-      	<h3>Libro 1</h3>
-      	<h3>Autor 1</h3>
+          <div class="six columns">
+            <h1 class="center">Nombre de la aplicacion</h1>
+          </div>
+          <div class="three columns">
+            <br /><br /><br />
+            <form>
+              <div class="row">
+                <div class="six columns">
+                  <label for="Usuario">Usuario</label>
+                  <input
+                    class="u-full-width"
+                    type="text"
+                    id="exampleEmailInput"
+                  />
+                </div>
+                <div class="six columns">
+                  <label for="Usuario">Contraseña</label>
+                  <input
+                    class="u-full-width"
+                    type="password"
+                    id="exampleEmailInput"
+                  />
+                </div>
+              </div>
+              <br />
+              <input type="submit" value="Enviar" /><br />
+              <a href="#">Formulario de registro</a>
+            </form>
+          </div>
+        </div>
+      </header>
+    </container>
+
+    <div class="row">
+      <div class="six columns">
+        <img
+          src="https://images.freeimages.com/images/large-previews/a9b/books-1419613.jpg"
+        />
       </div>
+      <!-- Book column-->
+      <div class="six columns">
+        <h1 class="center">Libros mejor valorados</h1>
+        <div class="row">
+          <div class="five columns">
+            <img
+              src="https://images.freeimages.com/images/large-previews/c56/book-1424031.jpg"
+            />
+          </div>
+          <div class="six columns">
+            <h3 class="right">Titulo 1</h3>
+            <h3 class="right">Autor 1</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book column-->
     </div>
-  </div>
-  
 
-</div>
-
-<div class="footer">
-	<a href="mailto:davidpeinado@correo.ugr.es">Contacto</a> - 
-    <a href="/como_se_hizo.pdf">Como se hizo</a>
-</div>
-
-</body>
+    <footer>
+      <h2>
+        <a href="mailto:davidpeinado@correo.ugr.es">Contacto</a> -
+        <a href="/como_se_hizo.pdf">Como se hizo</a>
+      </h2>
+    </footer>
+  </body>
 </html>
