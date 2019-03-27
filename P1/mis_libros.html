@@ -11,7 +11,7 @@
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -20,7 +20,7 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/skeleton.css" />
+  <link rel="stylesheet" href="css/mis_libros.css" />
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -31,73 +31,98 @@
   <container>
     <header>
       <div class="row">
-          <div class="three columns">
-              <a href="/PW/P1/index2.html">
-                <img id="logo" src="/PW/P1/images/book-open.svg" />
-              </a>
-            </div>
+        <div class="three columns">
+          <a href="/PW/P1/index2.html">
+            <img id="logo" src="/PW/P1/images/book-open.svg" />
+          </a>
+        </div>
         <div class="six columns">
           <h1 class="center" id="titulo">Nombre de la aplicacion</h1>
         </div>
         <div class="three columns">
-          <form action="/PW/P1/index2.html">
-            <div class="row">
-              <div class="six columns">
-                <label for="Usuario">Usuario</label>
-                <input class="u-full-width" type="text" id="exampleEmailInput" />
-              </div>
-              <div class="six columns">
-                <label for="Usuario">Contraseña</label>
-                <input class="u-full-width" type="password" id="exampleEmailInput" />
-              </div>
-            </div>
-            <br />
-            <input type="submit" value="Enviar" /><br />
-            <a href="#">Formulario de registro</a>
-          </form>
+          <h5 class="center" id="titulo">Usuario <br>
+            <a href="/PW/P1/index.html">Desconectarse</a></h>
         </div>
       </div>
     </header>
   </container>
 
-  <div class="row">
-    <div class="six columns" id="indexizquierda">
+  <!-- Navigation bar-->
+  <div class="topnav">
+    <ul>
+      <li class="different"><a href="/PW/P1/mis_libros.html">Mis Libros</a></li>
+      <li class="different"><a href="#">Mis Datos</a></li>
+      <li class="different"><a href="#">Foro</a></li>
+      <li class="different"><a href="#">Mis Recomendaciones</a></li>
+    </ul>
+  </div>
+  <!-- Navigation bar-->
 
+  <!-- Section-->
+  <div class="row">
+    <div class="six columns" id="izquierda">
+      <div class="row">
+        <div class="five columns">
+          <img src="https://images.freeimages.com/images/large-previews/c56/book-1424031.jpg" />
+        </div>
+        <div class="six columns" id="librosindex">
+          <h5 class="right"> <a href="/PW/P1/libroleido1.html"> Titulo 1</a></h5>
+          <h5 class="right">Autor 1</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="five columns">
+          <img src="https://images.freeimages.com/images/large-previews/c56/book-1424031.jpg" />
+        </div>
+        <div class="six columns" id="librosindex">
+          <h5 class="right"> <a href="#"> Titulo 1</a></h5>
+          <h5 class="right">Autor 1</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="five columns">
+          <img src="https://images.freeimages.com/images/large-previews/c56/book-1424031.jpg" />
+        </div>
+        <div class="six columns" id="librosindex">
+          <h5 class="right"> <a href="#"> Titulo 1</a></h5>
+          <h5 class="right">Autor 1</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="five columns">
+          <img src="https://images.freeimages.com/images/large-previews/c56/book-1424031.jpg" />
+        </div>
+        <div class="six columns" id="librosindex">
+          <h5 class="right"> <a href="#"> Titulo 1</a></h5>
+          <h5 class="right">Autor 1</h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="five columns">
+          <img src="https://images.freeimages.com/images/large-previews/c56/book-1424031.jpg" />
+        </div>
+        <div class="six columns" id="librosindex">
+          <h5 class="right"> <a href="#"> Titulo 1</a></h5>
+          <h5 class="right">Autor 1</h5>
+        </div>
+      </div>
     </div>
     <!-- Book column-->
-    <div class="six columns" id="indexderecha">
-      <h1 class="center" >Libros mejor valorados </h1>
-      <div class="row">
-        <div class="five columns">
-          <img src="https://images.freeimages.com/images/large-previews/c56/book-1424031.jpg" />
-        </div>
-        <div class="six columns" id="librosindex">
-          <h5 class="right">Titulo 1</h5>
-            <h5 class="right">Autor 1</h5>
-        </div>
+    <div class="six columns" id="derecha">
+      <h2 class='titulo'>Titulos de los últimos libros introducidos en la aplicación</h2>
+      <div class="container">
+        <h4>
+          <a href="#">Libro leído 1</a><br>
+          <a href="#">Libro leído 2</a><br>
+          <a href="#">Libro leído 3</a><br>
+        </h4>
+        <h5> <a href="#" id="alta">Dar de alta un nuevo libro</a></h5>
       </div>
-      <div class="row">
-        <div class="five columns">
-          <img src="https://images.freeimages.com/images/large-previews/c56/book-1424031.jpg" />
-        </div>
-        <div class="six columns" id="librosindex">
-          <h5 class="right">Titulo 1</h5>
-            <h5 class="right">Autor 1</h5>
-        </div>
-      </div>
-      <div class="row">
-        <div class="five columns">
-          <img src="https://images.freeimages.com/images/large-previews/c56/book-1424031.jpg" />
-        </div>
-        <div class="six columns" id="librosindex">
-          <h5 class="right">Titulo 1</h5>
-            <h5 class="right">Autor 1</h5>
-        </div>
-      </div>
+      
     </div>
-
     <!-- Book column-->
   </div>
+  <!-- Section-->
 
   <footer>
     <h2>
