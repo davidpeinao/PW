@@ -20,7 +20,8 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/skeleton.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/libro_leido.css" />
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -59,42 +60,59 @@
   <!-- Navigation bar-->
 
   <!-- Section-->
-  <div class="row">
-    <div class="six columns" id="indexizquierda">
+  <div class="container">
+    <img id="libro" src="/PW/P1/images/book-1424031.jpg" />
+    <div class="container" id="metadata">
+      <h5><span>Titulo: </span><span>el titulo</span><br>
+        <span>Autor: </span><span>el autor</span><br>
+        <span>Editorial: </span><span>la editorial</span><br>
+        <span>Año: </span><span>el año</span><br>
+        <span>Edición: </span><span>la edición</span>
+      </h5>
+    </div>
+    <div class="container" id="data">
+      <label for="descripcion">Descripción:</label>
+      <textarea readonly id="descripcion" name="descripcion" rows="20">
+        Aquí va la descripción.
+      </textarea>
 
+      <label for="opinion">Opinión:</label>
+      <textarea readonly id="opinion" name="opinion" rows="20">
+        Aquí va la opinión.
+      </textarea>
+
+      <div class='vertical-align'>
+        <label for="valoracion">Mi valoración:</label>
+        <div class='btns' id="valoracion">
+          <label>
+            <input name='button-group' type='radio' value='item'>
+            <span class='btn first'>Pésimo</span>
+            </input>
+          </label>
+          <label>
+            <input checked name='button-group' type='radio' value='other-item'>
+            <span class='btn'>Malo</span>
+            </input>
+          </label>
+          <label>
+            <input  name='button-group' type='radio' value='other-item'>
+            <span class='btn'>Bueno</span>
+            </input>
+          </label>
+          <label>
+            <input name='button-group' type='radio' value='third'>
+            <span class='btn'>Muy bueno</span>
+            </input>
+          </label>
+          <label>
+            <input name='button-group' type='radio' value='third'>
+            <span class='btn last'>Excelente</span>
+            </input>
+          </label>
+        </div>
+      </div>
     </div>
-    <!-- Book column-->
-    <div class="six columns" id="indexderecha">
-      <h1 class="center">Libros mejor valorados </h1>
-      <div class="row">
-        <div class="five columns">
-          <img src="/PW/P1/images/book-1424031.jpg" />
-        </div>
-        <div class="six columns" id="librosindex">
-          <h5 class="right">Titulo 1</h5>
-            <h5 class="right">Autor 1</h5>
-        </div>
-      </div>
-      <div class="row">
-        <div class="five columns">
-          <img src="/PW/P1/images/book-1424031.jpg" />
-        </div>
-        <div class="six columns" id="librosindex">
-          <h5 class="right">Titulo 1</h5>
-            <h5 class="right">Autor 1</h5>
-        </div>
-      </div>
-      <div class="row">
-        <div class="five columns">
-          <img src="/PW/P1/images/book-1424031.jpg" />
-        </div>
-        <div class="six columns" id="librosindex">
-          <h5 class="right">Titulo 1</h5>
-            <h5 class="right">Autor 1</h5>
-        </div>
-      </div>
-    </div>
-    <!-- Book column-->
+
   </div>
   <!-- Section-->
 

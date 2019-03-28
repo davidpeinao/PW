@@ -21,7 +21,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="css/libro_leido.css" />
+  <link rel="stylesheet" href="css/alta_libro.css" />
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -63,22 +63,32 @@
   <div class="container">
     <img id="libro" src="/PW/P1/images/book-1424031.jpg" />
     <div class="container" id="metadata">
-      <h5><span>Titulo: </span><span>el titulo</span><br>
-        <span>Autor: </span><span>el autor</span><br>
-        <span>Editorial: </span><span>la editorial</span><br>
-        <span>Año: </span><span>el año</span><br>
-        <span>Edición: </span><span>la edición</span>
+        <form action="/PW/P1/mis_libros.html">
+          <label id="data" for="Titulo">Titulo: </label>
+          <input class="u-full-width" type="text" />
+          <label id="data" for="Autor">Autor: </label>
+          <input class="u-full-width" type="text" />
+          <label id="data" for="Editorial">Editorial: </label>
+          <select id="country" name="country">
+              <option value="Editorial 1">Editorial 1</option>
+              <option value="Editorial 2">Editorial 2</option>
+              <option value="Editorial 3">Editorial 3</option>
+              <option value="Editorial 4">Editorial 4</option>
+              <option value="Editorial 5">Editorial 5</option>
+            </select>
+          <label id="data" for="Año">Año: </label>
+          <input class="u-full-width" type="number" />
+          <label id="data" for="Edición">Edición: </label>
+          <input class="u-full-width" type="text" />
       </h5>
+    
     </div>
     <div class="container" id="data">
-      <label for="descripcion">Descripción:</label>
-      <textarea readonly id="descripcion" name="descripcion" rows="20">
-        Aquí va la descripción.
-      </textarea>
+      <label id="data" for="descripcion">Descripción:</label>
+      <textarea id="descripcion" name="descripcion" rows="20" placeholder="Escribe la descripción aquí..."></textarea>
 
-      <label for="opinion">Opinión:</label>
-      <textarea readonly id="opinion" name="opinion" rows="20">
-        Aquí va la opinión.
+      <label id="data" for="opinion">Opinión:</label>
+      <textarea id="opinion" name="opinion" rows="20" placeholder="Escribe tu opinión aquí..."></textarea>
       </textarea>
 
       <div class='vertical-align'>
@@ -95,7 +105,7 @@
             </input>
           </label>
           <label>
-            <input checked name='button-group' type='radio' value='other-item'>
+            <input name='button-group' type='radio' value='other-item'>
             <span class='btn'>Bueno</span>
             </input>
           </label>
@@ -110,9 +120,10 @@
             </input>
           </label>
         </div>
+        <input type="submit" value="Enviar">
       </div>
     </div>
-
+  </form>
   </div>
   <!-- Section-->
 
