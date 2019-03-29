@@ -1,196 +1,89 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
+<html lang="en">
 
-      body {
-        font-family: Arial;
-        padding: 10px;
-        background: #f1f1f1;
-      }
+<head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8" />
+  <title>Indice</title>
+  <meta name="description" content="Indice" />
+  <meta name="author" content="David Peinado" />
 
-      /* Header/Blog Title */
-      .header {
-        padding: 30px;
-        text-align: center;
-        background: white;
-      }
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      .header h1 {
-        font-size: 50px;
-      }
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css" />
 
-      /* Style the top navigation bar */
-      .topnav {
-        overflow: hidden;
-        background-color: #333;
-        width: 50%;
-        margin-left: 25%;
-      }
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="css/mis_datos.css" />
 
-      /* Style the topnav links */
-      .topnav a {
-        float: left;
-        display: block;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        border-style: solid;
-        border-color: red;
-        width: 25%;
-        min-width: 160px;
-      }
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
 
-      /* Change color on hover */
-      .topnav a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-
-      /* Create two unequal columns that floats next to each other */
-      /* Left column */
-      .leftcolumn {
-        float: left;
-        width: 55%;
-        height: 800px;
-        overflow: auto;
-        background-color: cyan;
-      }
-
-      .leftcolumnleft {
-        float: left;
-        width: 55%;
-        height: 80px;
-        overflow: auto;
-        background-color: cyan;
-      }
-
-      .leftcolumnright {
-        float: left;
-        width: 55%;
-        height: 80px;
-        overflow: auto;
-        background-color: cyan;
-      }
-      /* Right column */
-      .rightcolumn {
-        float: left;
-        width: 45%;
-        background-color: #f1f1f1;
-        padding-left: 20px;
-      }
-
-      /* Fake image */
-      .fakeimg {
-        background-color: #aaa;
-        width: 150px;
-        height: 70px;
-        padding: 20px;
-      }
-
-      /* Add a card effect for articles */
-      .card {
-        background-color: white;
-        padding: 20px;
-        margin-top: 20px;
-      }
-
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      /* Footer */
-      .footer {
-        padding: 20px;
-        text-align: center;
-        background: rgb(0, 204, 255);
-        margin-top: 20px;
-      }
-
-      /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 800px) {
-        .leftcolumn,
-        .rightcolumn {
-          width: 100%;
-          padding: 0;
-        }
-      }
-
-      /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-      @media screen and (max-width: 400px) {
-        .topnav a {
-          float: none;
-          width: 100%;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <h1>My Website</h1>
-      <p>Resize the browser window to see the effect.</p>
-    </div>
-
-    <div class="topnav">
-      <a href="#">Mis Libros</a>
-      <a href="#">Foro</a>
-      <a href="#">Mis Datos</a>
-      <a href="#">Recomendaciones</a>
-    </div>
-
-    <div class="row">
-      <div class="leftcolumn">
-        <div class="card">
-          <div class="leftcolumnleft">
-            <div class="fakeimg">Image</div>
-          </div>
-          <div class="rightcolumn" id="a">
-            <div class="fakeimg">Image</div>
-          </div>
+<body>
+  <container>
+    <header>
+      <div class="row">
+        <div class="three columns">
+          <a href="/PW/P1/index2.html">
+            <img id="logo" src="/PW/P1/images/book-open.svg" />
+          </a>
         </div>
-        <div class="card">
-          <div class="fakeimg">Image</div>
+        <div class="six columns">
+          <h1 class="center" id="titulo">Nombre de la aplicacion</h1>
         </div>
-        <div class="card">
-          <div class="fakeimg">Image</div>
-        </div>
-        <div class="card">
-          <div class="fakeimg">Image</div>
-        </div>
-        <div class="card">
-          <div class="fakeimg">Image</div>
+        <div class="three columns">
+          <h5 class="center" id="titulo">Usuario <br>
+            <a href="/PW/P1/index.html">Desconectarse</a></h>
         </div>
       </div>
+    </header>
+  </container>
 
-      <div class="rightcolumn">
-        <div class="card">
-          <h2>About Me</h2>
-          <div class="fakeimg">Image</div>
-          <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-        </div>
-        <div class="card">
-          <h3>Popular Post</h3>
-          <div class="fakeimg"><p>Image</p></div>
-          <div class="fakeimg"><p>Image</p></div>
-          <div class="fakeimg"><p>Image</p></div>
-        </div>
-        <div class="card">
-          <h3>Follow Me</h3>
-          <p>Some text..</p>
-        </div>
-      </div>
+  <!-- Navigation bar-->
+  <div class="topnav">
+    <ul>
+      <li class="different"><a href="/PW/P1/mis_libros.html">Mis Libros</a></li>
+      <li class="different"><a href="/PW/P1/mis_datos.html">Mis Datos</a></li>
+      <li class="different"><a href="#">Foro</a></li>
+      <li class="different"><a href="/PW/P1/recomendaciones_u1.html">Mis Recomendaciones</a></li>
+    </ul>
+  </div>
+  <!-- Navigation bar-->
+
+  <!-- Section-->
+  <div class="container">
+    <div class="container" id="metadata">
+      <form action="/PW/P1/mis_libros.html">
+        <label id="data" for="Email">Email: </label>
+        <input class="u-full-width" type="text" value="usuario@weblibros.com" />
+        <label id="data" for="Ciudad">Ciudad: </label>
+        <input class="u-full-width" type="text" value="Granada"/>
+        <label id="data" for="Frase de perfil">Frase de perfil: </label>
+        <input class="u-full-width" type="text" value="Me gustan los libros jeje" />
+        <label id="data" for="Imagen de perfil">Imagen de perfil: </label>
+        <input class="u-full-width" type="file"  />
+
+        <input type="submit" value="Cambiar">
     </div>
+    </form>
+  </div>
+  <!-- Section-->
 
-    <div class="footer">
-      <a href="mailto:davidpeinado@correo.ugr.es">Contacto</a> - 
+  <footer>
+    <h2>
+      <a href="mailto:davidpeinado@correo.ugr.es">Contacto</a> -
       <a href="/como_se_hizo.pdf">Como se hizo</a>
-    </div>
-  </body>
+    </h2>
+  </footer>
+</body>
+
 </html>

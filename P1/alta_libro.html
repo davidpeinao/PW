@@ -52,9 +52,9 @@
   <div class="topnav">
     <ul>
       <li class="different"><a href="/PW/P1/mis_libros.html">Mis Libros</a></li>
-      <li class="different"><a href="#">Mis Datos</a></li>
+      <li class="different"><a href="/PW/P1/mis_datos.html">Mis Datos</a></li>
       <li class="different"><a href="#">Foro</a></li>
-      <li class="different"><a href="#">Mis Recomendaciones</a></li>
+      <li class="different"><a href="/PW/P1/recomendaciones_u1.html">Mis Recomendaciones</a></li>
     </ul>
   </div>
   <!-- Navigation bar-->
@@ -65,11 +65,11 @@
     <div class="container" id="metadata">
         <form action="/PW/P1/mis_libros.html">
           <label id="data" for="Titulo">Titulo: </label>
-          <input class="u-full-width" type="text" />
+          <input class="u-full-width" type="text" required />
           <label id="data" for="Autor">Autor: </label>
-          <input class="u-full-width" type="text" />
+          <input class="u-full-width" type="text" required />
           <label id="data" for="Editorial">Editorial: </label>
-          <select id="country" name="country">
+          <select id="country" name="country" >
               <option value="Editorial 1">Editorial 1</option>
               <option value="Editorial 2">Editorial 2</option>
               <option value="Editorial 3">Editorial 3</option>
@@ -77,18 +77,17 @@
               <option value="Editorial 5">Editorial 5</option>
             </select>
           <label id="data" for="Año">Año: </label>
-          <input class="u-full-width" type="number" />
+          <input class="u-full-width" type="number" required />
           <label id="data" for="Edición">Edición: </label>
-          <input class="u-full-width" type="text" />
-      </h5>
+          <input class="u-full-width" type="text" required />
     
     </div>
     <div class="container" id="data">
       <label id="data" for="descripcion">Descripción:</label>
-      <textarea id="descripcion" name="descripcion" rows="20" placeholder="Escribe la descripción aquí..."></textarea>
+      <textarea id="descripcion" name="descripcion" rows="20" placeholder="Escribe la descripción aquí..." required ></textarea>
 
       <label id="data" for="opinion">Opinión:</label>
-      <textarea id="opinion" name="opinion" rows="20" placeholder="Escribe tu opinión aquí..."></textarea>
+      <textarea id="opinion" name="opinion" rows="20" placeholder="Escribe tu opinión aquí..." required ></textarea>
       </textarea>
 
       <div class='vertical-align'>
@@ -105,7 +104,7 @@
             </input>
           </label>
           <label>
-            <input name='button-group' type='radio' value='other-item'>
+            <input checked name='button-group' type='radio' value='other-item'>
             <span class='btn'>Bueno</span>
             </input>
           </label>

@@ -21,7 +21,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="css/libro_leido.css" />
+  <link rel="stylesheet" href="css/alta_usuario.css" />
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -61,58 +61,17 @@
 
   <!-- Section-->
   <div class="container">
-    <img id="libro" src="/PW/P1/images/book-1424031.jpg" />
     <div class="container" id="metadata">
-      <h5><span>Titulo: </span><span>el titulo</span><br>
-        <span>Autor: </span><span>el autor</span><br>
-        <span>Editorial: </span><span>la editorial</span><br>
-        <span>Año: </span><span>el año</span><br>
-        <span>Edición: </span><span>la edición</span>
-      </h5>
+      <form action="/PW/P1/mis_libros.html">
+        <label id="data" for="Usuario">Usuario: </label>
+        <input class="u-full-width" type="text" required />
+        <label id="data" for="Contraseña">Contraseña: </label>
+        <input class="u-full-width" type="text" required />
+        <label id="data" for="Repetir contraseña">Repetir contraseña: </label>
+        <input class="u-full-width" type="text" required />
+        <input type="submit" value="Registrarme">
     </div>
-    <div class="container" id="data">
-      <label for="descripcion">Descripción:</label>
-      <textarea readonly id="descripcion" name="descripcion" rows="20">
-        Aquí va la descripción.
-      </textarea>
-
-      <label for="opinion">Opinión:</label>
-      <textarea readonly id="opinion" name="opinion" rows="20">
-        Aquí va la opinión.
-      </textarea>
-
-      <div class='vertical-align'>
-        <label for="valoracion">Mi valoración:</label>
-        <div class='btns' id="valoracion">
-          <label>
-            <input name='button-group' type='radio' value='item'>
-            <span class='btn first'>Pésimo</span>
-            </input>
-          </label>
-          <label>
-            <input checked name='button-group' type='radio' value='other-item'>
-            <span class='btn'>Malo</span>
-            </input>
-          </label>
-          <label>
-            <input  name='button-group' type='radio' value='other-item'>
-            <span class='btn'>Bueno</span>
-            </input>
-          </label>
-          <label>
-            <input name='button-group' type='radio' value='third'>
-            <span class='btn'>Muy bueno</span>
-            </input>
-          </label>
-          <label>
-            <input name='button-group' type='radio' value='third'>
-            <span class='btn last'>Excelente</span>
-            </input>
-          </label>
-        </div>
-      </div>
-    </div>
-
+    </form>
   </div>
   <!-- Section-->
 
