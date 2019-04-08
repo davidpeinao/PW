@@ -53,9 +53,9 @@
   
 }
 
-@media screen and (min-width: 600px) {
+@media (min-width: 400px) {
   .topnav li {
-    width: 230px;
+    width: 23%;
     border-bottom: none;
     height: 50px;
     line-height: 50px;
@@ -67,6 +67,14 @@
     margin-right: -4px;
   }
 }
+
+@media screen and (max-width:750px) {
+  /* For mobile phones: */
+  * {
+    width:25%;
+  }
+}
+
 
 .topnav li.different{
   border:none;
@@ -96,8 +104,11 @@
 /* Images
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 img {
-  max-width: 100%;
+  max-width: 200px;
+  max-height: 180px;
   height: auto;
+  padding: 10px;
+  margin-left: 50px;
 }
 
 /* Grid
@@ -154,6 +165,13 @@ footer {
 
 }
 
+@media only screen and (max-width:550px) {
+  /* For mobile phones: */
+  * {
+    width:100%;
+  }
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -174,6 +192,25 @@ footer {
   .container {
     width: 85%;
     padding: 0;
+  }
+}
+
+.cuarto{
+  float: left;
+  border: 2px solid blue;
+  width: 25%;
+}
+
+.mitad{
+  float: left;
+  border: 2px solid blue;
+  width: 49%;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .mitad, .cuarto {
+    width: 100%;
   }
 }
 
@@ -210,8 +247,6 @@ footer {
   .six.columns {
     width: 48%;
   }
-
-
   .seven.columns {
     width: 56.6666666667%;
   }
@@ -673,33 +708,4 @@ hr {
   content: "";
   display: table;
   clear: both;
-}
-
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
-
-/* Larger than mobile */
-@media (min-width: 400px) {
-}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {
-}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {
-}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {
 }

@@ -97,8 +97,9 @@
 /* Images
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 img {
-  width: 200px;
-  height: 200px;
+  max-height: 200px;
+  height: auto;
+  margin-left: 50px;
 }
 
 img#libro {

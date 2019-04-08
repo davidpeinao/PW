@@ -25,81 +25,52 @@
 - Clearing
 - Media Queries
 */
-
-/* Top navigation bar
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.topnav ul {
-  list-style: none;
-  background-color: #444;
-  text-align: center;
-  padding: 0;
-  margin: 0;
+[class*="col-"] {
+  float: left;
+  padding: 15px;
 }
 
-.topnav li {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.2em;
-  line-height: 40px;
-  height: 40px;
-  border-bottom: 1px solid #888;
-  transition: all ease-in-out .2s;
-}
- 
-.topnav a {
-  text-decoration: none;
-  color: #fff;
-  display: block;
-  transition: .3s background-color;
-  
-}
-
-@media screen and (min-width: 600px) {
-  .topnav li {
-    width: 230px;
-    border-bottom: none;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-  }
-  
-  .topnav li {
-    display: inline-block;
-    margin-right: -4px;
-  }
-}
-
-.topnav li.different{
-  border:none;
-  position: relative;
-}
-.topnav li.different:hover{
-  border: none;
-}
-.topnav li:hover {
-  border-bottom: 5px solid #FFFFFF;
-}
-.different::after{
-  content: '';
-  position: absolute;
-  width: 0px;
-  height: 5px;
-  left: 50%;
-  bottom:0;
-  background-color: white;
-  transition: all ease-in-out .2s;
-}
-.different:hover::after{
+[class*="col-"] {
   width: 100%;
-  left: 0;
+}
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
 }
 
 /* Images
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 img {
   max-width: 200px;
-  max-height: 200px;
+  max-height: 180px;
   height: auto;
-  padding-top: 10px;
+  padding: 10px;
   margin-left: 50px;
 }
 
@@ -111,12 +82,11 @@ img {
 }
 */
 header {
-  height: 250px;
+  height: 300px;
   background-color: rgba(240, 40, 40, 0.712)
 }
 
 footer {
-  
   padding: 20px;
   text-align: center;
   border-top: solid grey;
@@ -125,8 +95,6 @@ footer {
 }
 
 #logo{
-  height: 200px;
-  width: 200px;
   margin-top: 30px;
   margin-left: 80px;
 }
@@ -137,43 +105,13 @@ footer {
 
 #derecha {
   height: 800px;
-  background-color: navajowhite;
   border-radius: 5px;
-  border: 2px solid rgba(240, 40, 40, 0.712);
-  overflow: auto;
+  border: 2px solid rgba(240, 40, 40, 0.712)
 }
-
-
-#tituloizquierda {
-  height: 80px;
-  width: 320px;
-  padding: 15px;
-  position: relative;
-  left: 15%;
-  text-align: center;
-  background-color: lavenderblush;
-  border-radius: 5px;
-  border: 2px solid lavender;
-  overflow: hidden;
-}
-
-#tituloderecha {
-  height: 80px;
-  width: 320px;
-  padding: 15px;
-  position: relative;
-  left: 45%;
-  text-align: center;
-  background-color: lavenderblush;
-  border-radius: 5px;
-  border: 2px solid lavender;
-  overflow: hidden;
-}
-
 
 #izquierda {
   height: 800px;
-  background-color: navajowhite;
+  background-color: rgb(255, 255, 255);
   border-radius: 5px;
   border: 2px solid rgba(240, 40, 40, 0.712);
   overflow: auto;
@@ -185,6 +123,13 @@ footer {
   padding: 20px;
   border-radius: 15px;
 
+}
+
+@media only screen and (max-width:550px) {
+  /* For mobile phones: */
+  * {
+    width:100%;
+  }
 }
 
 .container {
@@ -207,6 +152,25 @@ footer {
   .container {
     width: 85%;
     padding: 0;
+  }
+}
+
+.cuarto{
+  float: left;
+  border: 2px solid blue;
+  width: 25%;
+}
+
+.mitad{
+  float: left;
+  border: 2px solid blue;
+  width: 49%;
+}
+
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+  .mitad, .cuarto {
+    width: 100%;
   }
 }
 
@@ -243,8 +207,6 @@ footer {
   .six.columns {
     width: 48%;
   }
-
-
   .seven.columns {
     width: 56.6666666667%;
   }
@@ -706,33 +668,4 @@ hr {
   content: "";
   display: table;
   clear: both;
-}
-
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
-
-/* Larger than mobile */
-@media (min-width: 400px) {
-}
-
-/* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {
-}
-
-/* Larger than tablet */
-@media (min-width: 750px) {
-}
-
-/* Larger than desktop */
-@media (min-width: 1000px) {
-}
-
-/* Larger than Desktop HD */
-@media (min-width: 1200px) {
 }

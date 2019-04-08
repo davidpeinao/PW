@@ -208,8 +208,11 @@ body {
 /* Images
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 img {
-  width: 200px;
-  height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  height: auto;
+  padding: 10px;
+  margin-left: 50px;
 }
 
 img#libro {
