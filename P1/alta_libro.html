@@ -31,39 +31,39 @@
 <body>
   <container>
     <header>
-      <div class="row">
-        <div class="three columns">
-          <a href="/PW/P1/index2.html">
-            <img id="logo" src="/PW/P1/images/book-open.svg" />
+      <section class="row">
+        <section class="three columns">
+          <a href="/P1/index2.html">
+            <img id="logo" src="/P1/images/library.svg" />
           </a>
-        </div>
-        <div class="six columns">
+        </section>
+        <section class="six columns">
           <h1 class="center" id="titulo">Nombre de la aplicacion</h1>
-        </div>
-        <div class="three columns">
+        </section>
+        <section class="three columns">
           <h5 class="center" id="titulo">Usuario <br>
-            <a href="/PW/P1/index.html">Desconectarse</a></h>
-        </div>
-      </div>
+            <a href="/P1/index.html">Desconectarse</a></h>
+        </section>
+      </section>
     </header>
   </container>
 
   <!-- Navigation bar-->
-  <div class="topnav">
+  <nav>
     <ul>
-      <li class="different"><a href="/PW/P1/mis_libros.html">Mis Libros</a></li>
-      <li class="different"><a href="/PW/P1/mis_datos.html">Mis Datos</a></li>
+      <li class="different"><a href="/P1/mis_libros.html">Mis Libros</a></li>
+      <li class="different"><a href="/P1/mis_datos.html">Mis Datos</a></li>
       <li class="different"><a href="#">Foro</a></li>
-      <li class="different"><a href="/PW/P1/recomendaciones_u1.html">Mis Recomendaciones</a></li>
+      <li class="different"><a href="/P1/recomendaciones_u1.html">Mis Recomendaciones</a></li>
     </ul>
-  </div>
+  </nav>
   <!-- Navigation bar-->
 
   <!-- Section-->
-  <div class="container">
-    <img id="libro" src="/PW/P1/images/libro1.jpg" />
-    <div class="container" id="metadata">
-        <form action="/PW/P1/mis_libros.html">
+  <section class="container">
+    <img id="libro" src="/P1/images/libro1.jpg" />
+    <section class="container" id="metadata">
+        <form action="/P1/mis_libros.html">
           <label id="data" for="Titulo">Titulo: </label>
           <input class="u-full-width" type="text" required />
           <label id="data" for="Autor">Autor: </label>
@@ -81,8 +81,8 @@
           <label id="data" for="Edición">Edición: </label>
           <input class="u-full-width" type="text" required />
     
-    </div>
-    <div class="container" id="data">
+    </section>
+    <section class="container" id="data">
       <label id="data" for="descripcion">Descripción:</label>
       <textarea id="descripcion" name="descripcion" rows="20" placeholder="Escribe la descripción aquí..." required ></textarea>
 
@@ -90,9 +90,9 @@
       <textarea id="opinion" name="opinion" rows="20" placeholder="Escribe tu opinión aquí..." required ></textarea>
       </textarea>
 
-      <div class='vertical-align'>
+      <section class='vertical-align'>
         <label for="valoracion">Mi valoración:</label>
-        <div class='btns' id="valoracion">
+        <section class='btns' id="valoracion">
           <label>
             <input name='button-group' type='radio' value='item'>
             <span class='btn first'>Pésimo</span>
@@ -118,12 +118,12 @@
             <span class='btn last'>Excelente</span>
             </input>
           </label>
-        </div>
+        </section>
         <input type="submit" value="Enviar">
-      </div>
-    </div>
+      </section>
+    </section>
   </form>
-  </div>
+  </section>
   <!-- Section-->
 
   <footer>

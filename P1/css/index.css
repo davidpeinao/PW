@@ -53,9 +53,9 @@ nav a {
   transition: .3s background-color;
 }
 
-@media (min-width: 400px) {
+@media screen and (min-width: 600px) {
   nav li {
-    width: 23%;
+    width: 230px;
     border-bottom: none;
     height: 50px;
     line-height: 50px;
@@ -64,13 +64,6 @@ nav a {
   nav li {
     display: inline-block;
     margin-right: -4px;
-  }
-}
-
-@media screen and (max-width:750px) {
-  /* For mobile phones: */
-  * {
-    width: 25%;
   }
 }
 
@@ -107,11 +100,8 @@ nav li:hover {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 img {
-  max-width: 200px;
-  max-height: 180px;
-  height: auto;
-  padding: 10px;
-  margin-left: 50px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* Grid
@@ -136,45 +126,6 @@ footer {
   background-color: rgba(240, 40, 40, 0.712)
 }
 
-#logo {
-  height: 200px;
-  width: 200px;
-  margin-top: 30px;
-  margin-left: 80px;
-}
-
-#titulo {
-  margin-top: 50px;
-}
-
-#derecha {
-  height: 800px;
-  border-radius: 5px;
-  border: 2px solid rgba(240, 40, 40, 0.712)
-}
-
-#izquierda {
-  height: 800px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 5px;
-  border: 2px solid rgba(240, 40, 40, 0.712);
-  overflow: auto;
-}
-
-#librosindex {
-  background-color: navajowhite;
-  margin-top: 40px;
-  padding: 20px;
-  border-radius: 15px;
-}
-
-@media only screen and (max-width:550px) {
-  /* For mobile phones: */
-  * {
-    width: 100%;
-  }
-}
-
 .container {
   position: relative;
   width: 100%;
@@ -196,25 +147,6 @@ footer {
   .container {
     width: 85%;
     padding: 0;
-  }
-}
-
-.cuarto {
-  float: left;
-  border: 2px solid blue;
-  width: 25%;
-}
-
-.mitad {
-  float: left;
-  border: 2px solid blue;
-  width: 49%;
-}
-
-@media only screen and (max-width:620px) {
-  /* For mobile phones: */
-  .mitad, .cuarto {
-    width: 100%;
   }
 }
 
@@ -247,6 +179,32 @@ footer {
   }
   .six.columns {
     width: 48%;
+  }
+  #logo {
+    height: 200px;
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 80px;
+  }
+  #titulo {
+    margin-top: 50px;
+  }
+  #indexderecha {
+    height: 950px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    border: 2px solid rgba(240, 40, 40, 0.712)
+  }
+  #indexizquierda {
+    height: 950px;
+    background-image: url('https://images.freeimages.com/images/large-previews/a9b/books-1419613.jpg');
+    background-size: 100% 100%;
+  }
+  #librosindex {
+    background-color: navajowhite;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 15px;
   }
   .seven.columns {
     width: 56.6666666667%;
@@ -357,12 +315,6 @@ h1 {
   letter-spacing: -0.1rem;
 }
 
-h2.titulo {
-  text-align: center;
-  max-width: 500px;
-  padding-left: 20%;
-}
-
 .center {
   text-align: center;
   padding: 50px;
@@ -438,13 +390,6 @@ a {
 
 a:hover {
   color: #0fa0ce;
-}
-
-a#alta {
-  position: absolute;
-  bottom: 0%;
-  color: #ce0f0f;
-  padding-left: 15%;
 }
 
 /* Buttons
@@ -660,3 +605,33 @@ hr {
   display: table;
   clear: both;
 }
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+/* Larger than mobile */
+
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+
+@media (min-width: 1200px) {}
