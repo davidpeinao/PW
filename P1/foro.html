@@ -21,7 +21,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="css/libro_leido.css" />
+  <link rel="stylesheet" href="css/foro.css" />
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -61,58 +61,15 @@
 
   <!-- Section-->
   <section class="container">
-    <img alt="libro" id="libro" src="/P1/images/libro2.jpg" />
-    <section class="container" id="metadata">
-      <h5><span>Titulo: </span><span>el titulo</span><br>
-        <span>Autor: </span><span>el autor</span><br>
-        <span>Editorial: </span><span>la editorial</span><br>
-        <span>Año: </span><span>el año</span><br>
-        <span>Edición: </span><span>la edición</span>
-      </h5>
-    </section>
-    <section class="container" id="data">
-      <label >Descripción:</label>
-      <textarea readonly id="descripcion" name="descripcion" rows="20">
-        Aquí va la descripción.
-      </textarea>
-
-      <label >Opinión:</label>
-      <textarea readonly id="opinion" name="opinion" rows="20">
-        Aquí va la opinión.
-      </textarea>
-
-      <section class='vertical-align'>
-        <label >Mi valoración:</label>
-        <section class='btns' id="valoracion">
-          <label>
-            <input name='button-group' type='radio' >
-            <span class='btn first'>Pésimo</span>
-            
-          </label>
-          <label>
-            <input checked name='button-group' type='radio' >
-            <span class='btn'>Malo</span>
-            
-          </label>
-          <label>
-            <input  name='button-group' type='radio' >
-            <span class='btn'>Bueno</span>
-            
-          </label>
-          <label>
-            <input name='button-group' type='radio' >
-            <span class='btn'>Muy bueno</span>
-            
-          </label>
-          <label>
-            <input name='button-group' type='radio' >
-            <span class='btn last'>Excelente</span>
-            
-          </label>
-        </section>
-      </section>
-    </section>
-
+    <h1 class="titulo-foro">Bienvenid@ al foro</h1>
+    <h2 class="subtitulo-foro">
+        Lee los últimos temas de interés, <br> da tu opinión acerca
+        de los libros que quieras o abre tu propio hilo si tienes 
+        algo que quieras contarnos.     
+    </h2>
+    <form class="formulario-hilo" action="#">
+    <input type="submit" id="crear-hilo" value="Crear hilo">
+  </form>
   </section>
   <!-- Section-->
 

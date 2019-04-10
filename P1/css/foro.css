@@ -26,129 +26,6 @@
 - Media Queries
 */
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300,);
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Roboto Condensed, Helvetica Neue, sans-serif;
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-
-.vertical-align {
-  display: table-cell;
-  height: 100%;
-}
-
-.button-link {
-  text-decoration: none;
-}
-
-.btns {
-  background-color: #ff9035;
-  background-image: -webkit-linear-gradient(-370deg, #ff5a64 0%, #faa04b 30%, #d2dc69 70%, #0ef49b 100%);
-  background-image: -webkit-linear-gradient(350deg, #ff5a64 0%, #faa04b 30%, #d2dc69 70%, #0ef49b 100%);
-  background-image: linear-gradient(100deg, #ff5a64 0%, #faa04b 30%, #d2dc69 70%, #0ef49b 100%);
-  z-index: 0;
-  height: 80px;
-  float: none;
-  margin: 0 auto;
-  width: 600px;
-  max-width: 100%;
-  border-radius: 40px;
-  display: block;
-  box-shadow: 0 2px 4px -1px rgba(25, 25, 25, 0.2);
-}
-
-.btns input {
-  display: none;
-}
-
-.btns label {
-  display: table;
-  float: left;
-  padding: 0;
-  width: 20%;
-  height: 100%;
-  margin: 0;
-  text-align: center;
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.btns label:first-child {
-  border-left: none;
-  border-radius: 40px 0 0 40px;
-}
-
-.btns label:last-child {
-  border-radius: 0 40px 40px 0;
-}
-
-.btns .btn {
-  font-size: 19px;
-  cursor: pointer;
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
-  font-weight: 300;
-  color: #FFF;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  box-shadow: inset 0 30px 20px -20px rgba(255, 255, 255, 0.15);
-  -webkit-transition: color 250ms cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition: color 250ms cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}
-
-.btns .btn:hover {
-  box-shadow: inset 0 30px 30px -20px rgba(50, 50, 50, 0.02);
-  -webkit-transition: all 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: all 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.btns .btn:after {
-  content: '\2714';
-  margin-left: -10px;
-  display: inline-block;
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms, -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms, -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms, transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms, transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22), -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}
-
-.btns .first {
-  border-radius: 40px 0 0 40px;
-}
-
-.btns .last {
-  border-radius: 0 40px 40px 0;
-}
-
-.btns input:checked+.btn {
-  color: #5f6982;
-  text-shadow: none;
-  background-image: -webkit-linear-gradient( bottom, rgba(25, 25, 25, 0) 65%, rgba(25, 25, 25, 0.08));
-  background-image: -webkit-linear-gradient(bottom, rgba(25, 25, 25, 0) 65%, rgba(25, 25, 25, 0.08));
-  background-image: linear-gradient(to top, rgba(25, 25, 25, 0) 65%, rgba(25, 25, 25, 0.08));
-  box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.08);
-  -webkit-transition: color 500ms cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 150ms;
-  transition: color 500ms cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 150ms;
-}
-
-.btns input:checked+.btn:after {
-  margin-left: 12px;
-  -webkit-transform: scale(1.25);
-  transform: scale(1.25);
-  -webkit-transition: -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms, margin 500ms;
-  -webkit-transition: margin 500ms, -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-  transition: margin 500ms, -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms, margin 500ms;
-  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms, margin 500ms, -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-}
-
 /* Top navigation bar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -223,11 +100,8 @@ nav li:hover {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 img {
-  max-width: 200px;
-  max-height: 200px;
-  height: auto;
-  padding: 10px;
-  margin-left: 50px;
+  width: 200px;
+  height: 200px;
 }
 
 img#libro {
@@ -263,37 +137,24 @@ footer {
   width: 100%;
   max-width: 1500px;
   background-color: navajowhite;
-  height: 1000px;
+  height: 1520px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
-.container#metadata {
-  max-width: 250px;
-  background-color: navajowhite;
-  height: 200px;
-  position: absolute;
-  top: 5%;
-  left: 35%;
+.titulo-foro{
+  color: #1459a8;
+  text-align: center;
 }
 
-.container#data {
-  background-color: navajowhite;
-  height: 500px;
-  position: absolute;
-  top: 30%;
-  left: 5%;
-}
-
-textarea#descripcion, textarea#opinion {
-  width: 800px;
-  height: 200px;
-  line-height: 1.5;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px #999;
-  overflow: auto;
+.subtitulo-foro{
+  color: #1c63b4;
+  text-align: center;
+  font-weight: normal;
+  font-size: 15pt;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .column, .columns {
@@ -553,13 +414,46 @@ a:hover {
   color: #0fa0ce;
 }
 
+input[type="submit"] {
+  display: inline-block;
+  height: 38px;
+  margin: 50px;
+  padding: 0 30px;
+  color: #555;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: #cacaca;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-textarea {
-  min-height: 65px;
-  padding-top: 6px;
-  padding-bottom: 6px;
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
+  padding: 8px 10px;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  float: left;
+  width: 55%;
+  transition: width 0.4s ease-in;
+}
+
+input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
+  border: 1px solid #33c3f0;
+  outline: 0;
+  width: 75%;
 }
 
 label, legend {
@@ -569,15 +463,14 @@ label, legend {
   padding-top: 10px;
 }
 
+label#data {
+  float: left;
+  width: 25%;
+}
+
 fieldset {
   padding: 0;
   border-width: 0;
-}
-
-label>.label-body {
-  display: inline-block;
-  margin-left: 0.5rem;
-  font-weight: normal;
 }
 
 /* Lists
@@ -697,33 +590,3 @@ hr {
   display: table;
   clear: both;
 }
-
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
-
-/* Larger than mobile */
-
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-
-@media (min-width: 1200px) {}
