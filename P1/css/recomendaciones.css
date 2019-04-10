@@ -136,7 +136,7 @@ footer {
   margin-left: 80px;
 }
 
-#titulo {
+.titulo {
   margin-top: 50px;
 }
 
@@ -182,7 +182,7 @@ footer {
   overflow: auto;
 }
 
-#librosindex {
+.librosindex {
   background-color: navajowhite;
   margin-top: 40px;
   padding: 20px;

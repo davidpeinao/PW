@@ -246,7 +246,7 @@ textarea#descripcion, textarea#opinion {
     margin-top: 30px;
     margin-left: 80px;
   }
-  #titulo {
+  .titulo {
     margin-top: 50px;
   }
   #indexderecha {

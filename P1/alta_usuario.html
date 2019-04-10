@@ -29,24 +29,22 @@
 </head>
 
 <body>
-  <container>
     <header>
       <section class="row">
         <section class="three columns">
           <a href="/P1/index2.html">
-            <img id="logo" src="/P1/images/library.svg" />
+            <img alt="libro" id="logo"   src="/P1/images/library.svg" />
           </a>
         </section>
         <section class="six columns">
-          <h1 class="center" id="titulo">Nombre de la aplicacion</h1>
+          <h1 class="center titulo">Nombre de la aplicacion</h1>
         </section>
         <section class="three columns">
-          <h5 class="center" id="titulo">Usuario <br>
-            <a href="/P1/index.html">Desconectarse</a></h>
+          <h5 class="center titulo">Usuario <br>
+            <a href="/P1/index.html">Desconectarse</a></h5>
         </section>
       </section>
     </header>
-  </container>
 
   <!-- Navigation bar-->
   <nav>
@@ -62,16 +60,17 @@
   <!-- Section-->
   <section class="container">
     <section class="container" id="metadata">
-      <form action="/P1/mis_libros.html">
-        <label id="data" for="Usuario">Usuario: </label>
-        <input class="u-full-width" type="text" required />
-        <label id="data" for="Contraseña">Contraseña: </label>
-        <input class="u-full-width" type="text" required />
-        <label id="data" for="Repetir contraseña">Repetir contraseña: </label>
-        <input class="u-full-width" type="text" required />
+      <form action="/P1/mis_libros.html" method="POST">
+        <label id="data" >Usuario: </label>
+        <input class="u-full-width" name="Usuario" type="text" required />
+        <label id="data" >Contraseña: </label>
+        <input class="u-full-width" name="Contraseña" type="text" required />
+        <label id="data" >Repetir contraseña: </label>
+        <input class="u-full-width" name="Repetir contraseña" type="text" required />
         <input type="submit" value="Registrarme">
+      </form>
     </section>
-    </form>
+    
   </section>
   <!-- Section-->
 

@@ -29,24 +29,22 @@
 </head>
 
 <body>
-  <container>
-    <header>
-      <section class="row">
-        <section class="three columns">
-          <a href="/P1/index2.html">
-            <img id="logo" src="/P1/images/library.svg" />
-          </a>
-        </section>
-        <section class="six columns">
-          <h1 class="center" id="titulo">Nombre de la aplicacion</h1>
-        </section>
-        <section class="three columns">
-          <h5 class="center" id="titulo">Usuario <br>
-            <a href="/P1/index.html">Desconectarse</a></h>
-        </section>
+  <header>
+    <section class="row">
+      <section class="three columns">
+        <a href="/P1/index2.html">
+          <img alt="libro" id="logo"  src="/P1/images/library.svg"/>
+        </a>
       </section>
-    </header>
-  </container>
+      <section class="six columns">
+        <h1 class="center titulo">Nombre de la aplicacion</h1>
+      </section>
+      <section class="three columns">
+        <h5 class="center titulo">Usuario <br>
+          <a href="/P1/index.html">Desconectarse</a></h5>
+      </section>
+    </section>
+  </header>
 
   <!-- Navigation bar-->
   <nav>
@@ -61,68 +59,68 @@
 
   <!-- Section-->
   <section class="container">
-    <img id="libro" src="/P1/images/libro1.jpg" />
-    <section class="container" id="metadata">
-        <form action="/P1/mis_libros.html">
-          <label id="data" for="Titulo">Titulo: </label>
-          <input class="u-full-width" type="text" required />
-          <label id="data" for="Autor">Autor: </label>
-          <input class="u-full-width" type="text" required />
-          <label id="data" for="Editorial">Editorial: </label>
-          <select id="country" name="country" >
-              <option value="Editorial 1">Editorial 1</option>
-              <option value="Editorial 2">Editorial 2</option>
-              <option value="Editorial 3">Editorial 3</option>
-              <option value="Editorial 4">Editorial 4</option>
-              <option value="Editorial 5">Editorial 5</option>
-            </select>
-          <label id="data" for="Año">Año: </label>
-          <input class="u-full-width" type="number" required />
-          <label id="data" for="Edición">Edición: </label>
-          <input class="u-full-width" type="text" required />
-    
-    </section>
-    <section class="container" id="data">
-      <label id="data" for="descripcion">Descripción:</label>
-      <textarea id="descripcion" name="descripcion" rows="20" placeholder="Escribe la descripción aquí..." required ></textarea>
+    <img alt="libro" id="libro" src="/P1/images/libro1.jpg" />
+    <form action="/P1/mis_libros.html" method="POST">
+      <section class="container" id="metadata">
 
-      <label id="data" for="opinion">Opinión:</label>
-      <textarea id="opinion" name="opinion" rows="20" placeholder="Escribe tu opinión aquí..." required ></textarea>
-      </textarea>
-
-      <section class='vertical-align'>
-        <label for="valoracion">Mi valoración:</label>
-        <section class='btns' id="valoracion">
-          <label>
-            <input name='button-group' type='radio' value='item'>
-            <span class='btn first'>Pésimo</span>
-            </input>
-          </label>
-          <label>
-            <input name='button-group' type='radio' value='other-item'>
-            <span class='btn'>Malo</span>
-            </input>
-          </label>
-          <label>
-            <input checked name='button-group' type='radio' value='other-item'>
-            <span class='btn'>Bueno</span>
-            </input>
-          </label>
-          <label>
-            <input name='button-group' type='radio' value='third'>
-            <span class='btn'>Muy bueno</span>
-            </input>
-          </label>
-          <label>
-            <input name='button-group' type='radio' value='third'>
-            <span class='btn last'>Excelente</span>
-            </input>
-          </label>
-        </section>
-        <input type="submit" value="Enviar">
+        <label id="data">Titulo: </label>
+        <input class="u-full-width" name="Titulo" type="text" required />
+        <label id="data" >Autor: </label>
+        <input class="u-full-width" name="Autor" type="text" required />
+        <label id="data" >Editorial: </label>
+        <select id="data" name="Editorial">
+          <option value="Editorial 1">Editorial 1</option>
+          <option value="Editorial 2">Editorial 2</option>
+          <option value="Editorial 3">Editorial 3</option>
+          <option value="Editorial 4">Editorial 4</option>
+          <option value="Editorial 5">Editorial 5</option>
+        </select>
+        <label id="data" >Año: </label>
+        <input class="u-full-width" name="Año" type="number" required />
+        <label id="data">Edición: </label>
+        <input class="u-full-width"  name="Edición" type="text" required />
       </section>
-    </section>
-  </form>
+      <section class="container" id="data">
+        <label id="data" >Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="20" placeholder="Escribe la descripción aquí..."
+          required></textarea>
+
+        <label id="data" >Opinión:</label>
+        <textarea id="opinion" name="opinion" rows="20" placeholder="Escribe tu opinión aquí..." required></textarea>
+
+        <section class='vertical-align'>
+          <label>Mi valoración:</label>
+          <section class='btns' id="valoracion">
+            <label>
+              <input name='button-group' type='radio' value='item'>
+              <span class='btn first'>Pésimo</span>
+
+            </label>
+            <label>
+              <input name='button-group' type='radio' value='other-item'>
+              <span class='btn'>Malo</span>
+
+            </label>
+            <label>
+              <input checked name='button-group' type='radio' value='other-item'>
+              <span class='btn'>Bueno</span>
+
+            </label>
+            <label>
+              <input name='button-group' type='radio' value='third'>
+              <span class='btn'>Muy bueno</span>
+
+            </label>
+            <label>
+              <input name='button-group' type='radio' value='third'>
+              <span class='btn last'>Excelente</span>
+
+            </label>
+          </section>
+          <input type="submit" value="Enviar">
+        </section>
+      </section>
+    </form>
   </section>
   <!-- Section-->
 
