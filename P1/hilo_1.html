@@ -21,7 +21,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="css/foro.css" />
+  <link rel="stylesheet" href="css/hilo_1.css" />
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -29,7 +29,6 @@
 </head>
 
 <body>
-
   <header>
     <section class="row">
       <section class="three columns">
@@ -47,7 +46,6 @@
     </section>
   </header>
 
-
   <!-- Navigation bar-->
   <nav>
     <ul>
@@ -61,50 +59,37 @@
 
   <!-- Section-->
   <main>
-    <section class="container">
-      <h1 class="titulo-foro">Bienvenid@ al foro</h1>
-      <h2 class="subtitulo-foro">
-        Lee los últimos temas de interés, <br> da tu opinión acerca
-        de los libros que quieras o abre tu propio hilo si tienes
-        algo que quieras contarnos.
-      </h2>
-
-      <section class="titulo_boton">
-        <form action="crear_hilo.html">
-          <input type="submit" name="crear_hilo" value="Crear hilo">
-        </form>
-        <h2 class="center">Últimos temas</h2>
+    <section class="hilo">
+      <section class="hilo-cabecera">Que os parece Paulo Coelho?</section>
+      <section class="hilo-respuesta">
+        <article class="usuario">
+          <img src="/P1/images/libro1.jpg">
+          <p class="nombre-usuario">Pepe</p>
+        </article>
+        <article class="texto-respuesta">Es un parguelas, como lo pille por la calle vera tu maemia</article>
       </section>
-
-      <section class="feed">
-        <ul>
-          <li><a href="/P1/hilo_1.html">
-              <h5 class="tema">Tema 1</h5>
-              <h5 class="actividad">Hace 1 min</h5>
-              <h5 class="visitas">392 visitas</h5>
-            </a></li>
-          <li><a href="/P1/hilo_1.html">
-              <h5 class="tema">Tema 2</h5>
-              <h5 class="actividad">Hace 3 min</h5>
-              <h5 class="visitas">55 visitas</h5>
-            </a></li>
-          <li><a href="/P1/hilo_1.html">
-              <h5 class="tema">Tema 3</h5>
-              <h5 class="actividad">Hace 3 min</h5>
-              <h5 class="visitas">542 visitas</h5>
-            </a></li>
-          <li><a href="/P1/hilo_1.html">
-              <h5 class="tema">Tema 4</h5>
-              <h5 class="actividad">Hace 6 min</h5>
-              <h5 class="visitas">42 visitas</h5>
-            </a></li>
-          <li><a href="/P1/hilo_1.html">
-              <h5 class="tema">Tema 5</h5>
-              <h5 class="actividad">Hace 12 min</h5>
-              <h5 class="visitas">3 visitas</h5>
-            </a></li>
-        </ul>
+      <section class="hilo-respuesta">
+        <article class="usuario">
+          <img src="/P1/images/libro2.jpg">
+          <p class="nombre-usuario">Nomelavoelpito</p>
+        </article>
+        <article class="texto-respuesta">Jaja yokesetio no soi 100tifiko jajj salu2</article>
       </section>
+      <section class="hilo-respuesta">
+        <article class="usuario">
+          <img src="/P1/images/libro3.jpg">
+          <p class="nombre-usuario">LibroDeIncognito</p>
+        </article>
+        <article class="texto-respuesta">A mi no me mires yo soy un libro jeje
+        </article>
+      </section>
+      <form class="formulario-hilo">
+        <label for="respuesta-usuario">Responde a este hilo</label>
+        <br>
+        <textarea id="respuesta-usuario" rows="5" required></textarea>
+        <br>
+        <input class="boton-enviar" type="submit" id="enviar_respuesta" value="Enviar respuesta">
+      </form>
     </section>
   </main>
   <!-- Section-->
