@@ -21,7 +21,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="css/alta_libro.css" />
+  <link rel="stylesheet" href="css/crear_hilo.css" />
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -59,68 +59,18 @@
 
   <!-- Section-->
   <section class="container">
-    <img alt="libro" id="libro" src="/P1/images/libro1.jpg" />
-    <form action="/P1/mis_libros.html" method="POST">
-      <section class="container" id="metadata">
-
-        <label id="data">Titulo: </label>
+    <section class="container" id="metadata">
+      <form action="/P1/foro.html" method="POST">
+        <label id="data">Título: </label>
         <input class="u-full-width" name="Titulo" type="text" required />
-        <label id="data">Autor: </label>
-        <input class="u-full-width" name="Autor" type="text" required />
-        <label id="data">Editorial: </label>
-        <select id="data" name="Editorial">
-          <option value="Editorial 1">Editorial 1</option>
-          <option value="Editorial 2">Editorial 2</option>
-          <option value="Editorial 3">Editorial 3</option>
-          <option value="Editorial 4">Editorial 4</option>
-          <option value="Editorial 5">Editorial 5</option>
-        </select>
-        <label id="data">Año: </label>
-        <input class="u-full-width" name="Año" type="number" required />
-        <label id="data">Edición: </label>
-        <input class="u-full-width" name="Edición" type="text" required />
-      </section>
-      <section class="container" id="data">
-        <label id="data">Descripción:</label>
-        <textarea id="descripcion" name="descripcion" rows="20" placeholder="Escribe la descripción aquí..."
-          required></textarea>
+        <label id="data">Descripción: </label>
+        <textarea id="data" name="descripcion" rows="20" 
+        placeholder="Escribe la descripción aquí..." required></textarea>
 
-        <label id="data">Opinión:</label>
-        <textarea id="opinion" name="opinion" rows="20" placeholder="Escribe tu opinión aquí..." required></textarea>
+        <input type="submit" value="Enviar hilo">
+      </form>
+    </section>
 
-        <section class='vertical-align'>
-          <label>Mi valoración:</label>
-          <section class='btns' id="valoracion">
-            <label>
-              <input name='button-group' type='radio' value='item'>
-              <span class='btn first'>Pésimo</span>
-
-            </label>
-            <label>
-              <input name='button-group' type='radio' value='other-item'>
-              <span class='btn'>Malo</span>
-
-            </label>
-            <label>
-              <input checked name='button-group' type='radio' value='other-item'>
-              <span class='btn'>Bueno</span>
-
-            </label>
-            <label>
-              <input name='button-group' type='radio' value='third'>
-              <span class='btn'>Muy bueno</span>
-
-            </label>
-            <label>
-              <input name='button-group' type='radio' value='third'>
-              <span class='btn last'>Excelente</span>
-
-            </label>
-          </section>
-          <input type="submit" value="Enviar">
-        </section>
-      </section>
-    </form>
   </section>
   <!-- Section-->
 

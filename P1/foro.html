@@ -29,24 +29,24 @@
 </head>
 
 <body>
-  
-    <header>
-      <section class="row">
-        <section class="three columns">
-          <a href="/P1/index2.html">
-            <img alt="libro" id="logo"  src="/P1/images/library.svg" />
-          </a>
-        </section>
-        <section class="six columns">
-          <h1 class="center titulo">Nombre de la aplicacion</h1>
-        </section>
-        <section class="three columns">
-          <h5 class="center titulo">Usuario <br>
-            <a href="/P1/index.html">Desconectarse</a></h5>
-        </section>
+
+  <header>
+    <section class="row">
+      <section class="three columns">
+        <a href="/P1/index2.html">
+          <img alt="libro" id="logo" src="/P1/images/library.svg" />
+        </a>
       </section>
-    </header>
-  
+      <section class="six columns">
+        <h1 class="center titulo">Nombre de la aplicacion</h1>
+      </section>
+      <section class="three columns">
+        <h5 class="center titulo">Usuario <br>
+          <a href="/P1/index.html">Desconectarse</a></h5>
+      </section>
+    </section>
+  </header>
+
 
   <!-- Navigation bar-->
   <nav>
@@ -63,13 +63,47 @@
   <section class="container">
     <h1 class="titulo-foro">Bienvenid@ al foro</h1>
     <h2 class="subtitulo-foro">
-        Lee los últimos temas de interés, <br> da tu opinión acerca
-        de los libros que quieras o abre tu propio hilo si tienes 
-        algo que quieras contarnos.     
+      Lee los últimos temas de interés, <br> da tu opinión acerca
+      de los libros que quieras o abre tu propio hilo si tienes
+      algo que quieras contarnos.
     </h2>
-    <form class="formulario-hilo" action="#">
-    <input type="submit" id="crear-hilo" value="Crear hilo">
-  </form>
+
+    <section class="titulo_boton">
+      <form action="crear_hilo.html">
+        <input type="submit" name="crear_hilo" value="Crear hilo">
+      </form>
+      <h2 class="center">Últimos temas</h2>
+    </section>
+
+    <section class="feed">
+      <ul>
+        <li><a href="#">
+            <h5 class="tema">Tema 1</h5>
+            <h5 class="actividad">Hace 1 min</h5>
+            <h5 class="visitas">392 visitas</h5>
+          </a></li>
+        <li><a href="#">
+            <h5 class="tema">Tema 2</h5>
+            <h5 class="actividad">Hace 3 min</h5>
+            <h5 class="visitas">55 visitas</h5>
+          </a></li>
+        <li><a href="#">
+            <h5 class="tema">Tema 3</h5>
+            <h5 class="actividad">Hace 3 min</h5>
+            <h5 class="visitas">542 visitas</h5>
+          </a></li>
+        <li><a href="#">
+            <h5 class="tema">Tema 4</h5>
+            <h5 class="actividad">Hace 6 min</h5>
+            <h5 class="visitas">42 visitas</h5>
+          </a></li>
+        <li><a href="#">
+            <h5 class="tema">Tema 5</h5>
+            <h5 class="actividad">Hace 12 min</h5>
+            <h5 class="visitas">3 visitas</h5>
+          </a></li>
+      </ul>
+    </section>
   </section>
   <!-- Section-->
 

@@ -96,20 +96,6 @@ nav li:hover {
   left: 0;
 }
 
-/* Images
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-img {
-  width: 200px;
-  height: 200px;
-}
-
-img#libro {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-}
-
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -121,7 +107,7 @@ img#libro {
 
 header {
   height: 250px;
-  background-color: rgba(240, 40, 40, 0.712);
+  background-color: rgba(240, 40, 40, 0.712)
 }
 
 footer {
@@ -129,7 +115,7 @@ footer {
   text-align: center;
   border-top: solid grey;
   border-width: 1px;
-  background-color: rgba(240, 40, 40, 0.712);
+  background-color: rgba(240, 40, 40, 0.712)
 }
 
 .container {
@@ -137,91 +123,21 @@ footer {
   width: 100%;
   max-width: 1500px;
   background-color: navajowhite;
-  height: 850px;
+  height: 620px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
-.titulo-foro{
-  color: #1459a8;
-  text-align: center;
+.container#metadata {
+  max-width: 950px;
+  background-color: navajowhite;
+  height: 200px;
+  position: absolute;
+  top: 5%;
+  left: 10%;
 }
 
-.subtitulo-foro{
-  color: #1c63b4;
-  text-align: center;
-  font-weight: normal;
-  font-size: 15pt;
-  padding-left: 15%;
-  padding-right: 15%;
-}
-
-.titulo_boton{
-  width: 100%;
-  height: 150px;
-}
-
-.titulo_boton form{
-  float: right;
-}
-
-.titulo_boton h2{
-  float: none;
-}
-
-
-.feed{
-  background-color: lavenderblush;
-  border-radius: 20px;
-  padding:10px;
-}
-
-.feed ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.feed li {
-  font: 200 10px/1.5 Helvetica, Verdana, sans-serif;
-  margin: 15px;
-}
-
-.feed li:last-child {
-  border: none;
-}
-
-.feed li .tema{
-  display: inline-block;
-  width: 60%;
-}
-
-.feed li .actividad{
-  display: inline-block;
-  width: 15%;
-}
-
-.feed li .visitas{
-  display: inline-block;
-  width: 20%;
-  text-align: right;
-}
-
-.feed li a {
-  border-radius: 10px;
-  padding: 10px;
-  text-decoration: none;
-  color: #000;
-  transition: font-size 0.5s ease, background-color 0.5s ease;
-  display: block;
-  
-}
-
-.feed li a:hover {
-  font-size: 50px;
-  background: rgba(22, 21, 21, 0.13);
-}
 
 .column, .columns {
   width: 100%;
@@ -276,23 +192,6 @@ footer {
   }
   .titulo {
     margin-top: 50px;
-  }
-  #indexderecha {
-    height: 950px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 25px;
-    border: 2px solid rgba(240, 40, 40, 0.712)
-  }
-  #indexizquierda {
-    height: 950px;
-    background-image: url('https://images.freeimages.com/images/large-previews/a9b/books-1419613.jpg');
-    background-size: 100% 100%;
-  }
-  #librosindex {
-    background-color: navajowhite;
-    margin-top: 40px;
-    padding: 20px;
-    border-radius: 15px;
   }
   .seven.columns {
     width: 56.6666666667%;
@@ -503,22 +402,26 @@ input[type="submit"] {
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
-  padding: 8px 10px;
+  padding: 6px 10px;
   /* The 6px vertically centers text on FF, ignored by Webkit */
   background-color: #fff;
   border: 1px solid #d1d1d1;
   border-radius: 4px;
   box-shadow: none;
   float: left;
-  width: 55%;
+  width: 65%;
+}
+
+input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"],  select {
   transition: width 0.4s ease-in;
 }
 
 input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
   border: 1px solid #33c3f0;
   outline: 0;
+}
+input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, select:focus {
   width: 75%;
 }
 
@@ -656,3 +559,33 @@ hr {
   display: table;
   clear: both;
 }
+
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+/* Larger than mobile */
+
+@media (min-width: 400px) {}
+
+/* Larger than phablet (also point when grid becomes active) */
+
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+
+@media (min-width: 1200px) {}
