@@ -26,93 +26,75 @@
 - Media Queries
 */
 
-[class*="col-"] {
-  float: left;
-  padding: 15px;
+/* Top navigation bar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
-[class*="col-"] {
+nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+  transition: all ease-in-out .2s;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+
+@media screen and (min-width: 600px) {
+  nav li {
+    width: 230px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+  nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
+  
+}
+
+nav li.different {
+  border: none;
+  position: relative;
+}
+
+nav li.different:hover {
+  border: none;
+}
+
+nav li:hover {
+  border-bottom: 5px solid #FFFFFF;
+}
+
+.different::after {
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 5px;
+  left: 50%;
+  bottom: 0;
+  background-color: white;
+  transition: all ease-in-out .2s;
+}
+
+.different:hover::after {
   width: 100%;
-}
-
-@media only screen and (min-width: 600px) {
-  /* For tablets: */
-  .col-s-1 {
-    width: 8.33%;
-  }
-  .col-s-2 {
-    width: 16.66%;
-  }
-  .col-s-3 {
-    width: 25%;
-  }
-  .col-s-4 {
-    width: 33.33%;
-  }
-  .col-s-5 {
-    width: 41.66%;
-  }
-  .col-s-6 {
-    width: 50%;
-  }
-  .col-s-7 {
-    width: 58.33%;
-  }
-  .col-s-8 {
-    width: 66.66%;
-  }
-  .col-s-9 {
-    width: 75%;
-  }
-  .col-s-10 {
-    width: 83.33%;
-  }
-  .col-s-11 {
-    width: 91.66%;
-  }
-  .col-s-12 {
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .col-1 {
-    width: 8.33%;
-  }
-  .col-2 {
-    width: 16.66%;
-  }
-  .col-3 {
-    width: 25%;
-  }
-  .col-4 {
-    width: 33.33%;
-  }
-  .col-5 {
-    width: 41.66%;
-  }
-  .col-6 {
-    width: 50%;
-  }
-  .col-7 {
-    width: 58.33%;
-  }
-  .col-8 {
-    width: 66.66%;
-  }
-  .col-9 {
-    width: 75%;
-  }
-  .col-10 {
-    width: 83.33%;
-  }
-  .col-11 {
-    width: 91.66%;
-  }
-  .col-12 {
-    width: 100%;
-  }
+  left: 0;
 }
 
 /* Images
@@ -120,9 +102,9 @@
 
 img {
   max-width: 200px;
-  max-height: 180px;
+  max-height: 200px;
   height: auto;
-  padding: 10px;
+  padding-top: 10px;
   margin-left: 50px;
 }
 
@@ -136,8 +118,32 @@ img {
 */
 
 header {
-  height: 300px;
-  background-color: rgba(240, 40, 40, 0.712)
+  background-color: rgba(240, 40, 40, 0.712);
+  display: flex;
+}
+
+.columna{
+  flex: 1;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  header {   
+    flex-direction: column;
+  }
+  #logo{
+    max-width: 130px;
+    max-height: 130px;
+    margin-top: 0px;
+    margin-left: 0px;    
+  }
+  header img{
+    padding-top: 1%;
+    padding-left: 30%;
+  }
+  header a{
+    max-width: 1px;
+  }
 }
 
 footer {
@@ -145,12 +151,13 @@ footer {
   text-align: center;
   border-top: solid grey;
   border-width: 1px;
-  background-color: rgba(240, 40, 40, 0.712)
+  background-color: rgba(240, 40, 40, 0.712);
 }
 
 #logo {
-  margin-top: 30px;
-  margin-left: 80px;
+  height: 200px;
+  width: 200px;
+
 }
 
 .titulo {
@@ -159,30 +166,51 @@ footer {
 
 #derecha {
   height: 800px;
-  border-radius: 5px;
-  border: 2px solid rgba(240, 40, 40, 0.712)
-}
-
-#izquierda {
-  height: 800px;
-  background-color: rgb(255, 255, 255);
+  background-color: navajowhite;
   border-radius: 5px;
   border: 2px solid rgba(240, 40, 40, 0.712);
   overflow: auto;
 }
 
-#librosindex {
+#tituloizquierda {
+  height: 80px;
+  width: 320px;
+  padding: 15px;
+  position: relative;
+  left: 15%;
+  text-align: center;
+  background-color: lavenderblush;
+  border-radius: 5px;
+  border: 2px solid lavender;
+  overflow: hidden;
+}
+
+#tituloderecha {
+  height: 80px;
+  width: 320px;
+  padding: 15px;
+  position: relative;
+  left: 45%;
+  text-align: center;
+  background-color: lavenderblush;
+  border-radius: 5px;
+  border: 2px solid lavender;
+  overflow: hidden;
+}
+
+#izquierda {
+  height: 800px;
+  background-color: navajowhite;
+  border-radius: 5px;
+  border: 2px solid rgba(240, 40, 40, 0.712);
+  overflow: auto;
+}
+
+.librosindex {
   background-color: navajowhite;
   margin-top: 40px;
   padding: 20px;
   border-radius: 15px;
-}
-
-@media only screen and (max-width:550px) {
-  /* For mobile phones: */
-  * {
-    width: 100%;
-  }
 }
 
 .container {
@@ -206,25 +234,6 @@ footer {
   .container {
     width: 85%;
     padding: 0;
-  }
-}
-
-.cuarto {
-  float: left;
-  border: 2px solid blue;
-  width: 25%;
-}
-
-.mitad {
-  float: left;
-  border: 2px solid blue;
-  width: 49%;
-}
-
-@media only screen and (max-width:620px) {
-  /* For mobile phones: */
-  .mitad, .cuarto {
-    width: 100%;
   }
 }
 
@@ -457,177 +466,6 @@ a#alta {
   padding-left: 15%;
 }
 
-/* Buttons
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
-  display: inline-block;
-  height: 38px;
-  padding: 0 30px;
-  color: #555;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 38px;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid #bbb;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .button:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus {
-  color: #333;
-  border-color: #888;
-  outline: 0;
-}
-
-.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
-  color: #fff;
-  background-color: #33c3f0;
-  border-color: #33c3f0;
-}
-
-.button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
-  color: #fff;
-  background-color: #1eaedb;
-  border-color: #1eaedb;
-}
-
-/* Forms
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea, select {
-  height: 38px;
-  padding: 6px 10px;
-  /* The 6px vertically centers text on FF, ignored by Webkit */
-  background-color: #fff;
-  border: 1px solid #d1d1d1;
-  border-radius: 4px;
-  box-shadow: none;
-  box-sizing: border-box;
-}
-
-/* Removes awkward default styles on some inputs for iOS */
-
-input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-textarea {
-  min-height: 65px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus, input[type="password"]:focus, textarea:focus, select:focus {
-  border: 1px solid #33c3f0;
-  outline: 0;
-}
-
-label, legend {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  padding-top: 60px;
-}
-
-fieldset {
-  padding: 0;
-  border-width: 0;
-}
-
-input[type="checkbox"], input[type="radio"] {
-  display: inline;
-}
-
-label>.label-body {
-  display: inline-block;
-  margin-left: 0.5rem;
-  font-weight: normal;
-}
-
-/* Lists
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-ul {
-  list-style: circle inside;
-}
-
-ol {
-  list-style: decimal inside;
-}
-
-ol, ul {
-  padding-left: 0;
-  margin-top: 0;
-}
-
-ul ul, ul ol, ol ol, ol ul {
-  margin: 1.5rem 0 1.5rem 3rem;
-  font-size: 90%;
-}
-
-li {
-  margin-bottom: 1rem;
-}
-
-/* Code
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-code {
-  padding: 0.2rem 0.5rem;
-  margin: 0 0.2rem;
-  font-size: 90%;
-  white-space: nowrap;
-  background: #f1f1f1;
-  border: 1px solid #e1e1e1;
-  border-radius: 4px;
-}
-
-pre>code {
-  display: block;
-  padding: 1rem 1.5rem;
-  white-space: pre;
-}
-
-/* Tables
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-th, td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #e1e1e1;
-}
-
-th:first-child, td:first-child {
-  padding-left: 0;
-}
-
-th:last-child, td:last-child {
-  padding-right: 0;
-}
-
-/* Spacing
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-button, .button {
-  margin-bottom: 1rem;
-}
-
-input, textarea, select, fieldset {
-  margin-bottom: 1.5rem;
-}
-
-pre, blockquote, dl, figure, table, p, ul, ol, form {
-  margin-bottom: 2.5rem;
-}
 
 /* Utilities
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -650,15 +488,6 @@ pre, blockquote, dl, figure, table, p, ul, ol, form {
   float: left;
 }
 
-/* Misc
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
-  border-width: 0;
-  border-top: 1px solid #e1e1e1;
-}
 
 /* Clearing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
