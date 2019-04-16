@@ -53,7 +53,7 @@ nav a {
   transition: .3s background-color;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1000px) {
   nav li {
     width: 230px;
     border-bottom: none;
@@ -123,8 +123,7 @@ header {
 }
 
 .columna{
-  flex: 1;
-  padding: 10px;
+  width: 90%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -145,6 +144,7 @@ header {
     max-width: 1px;
     text-align: center;
   }
+
 }
 
 footer {
@@ -153,6 +153,7 @@ footer {
   border-top: solid grey;
   border-width: 1px;
   background-color: rgba(240, 40, 40, 0.712);
+  clear: both;
 }
 
 #logo {
@@ -165,12 +166,43 @@ footer {
   margin-top: 50px;
 }
 
-.flex{
-  display: flex;
-  justify-content: space-around;
+
+main{
+  margin: 0px auto;
+  border: 2px solid green;
 }
 
-.flex h4{
+.izquierda, .derecha {
+  padding: 10px;
+  background-color: navajowhite;
+  border-radius: 5px;
+  border: 2px solid rgba(240, 40, 40, 0.712);
+  overflow: auto;
+}
+
+.izquierda {
+  float: left;
+  width: 45%;
+}
+
+.derecha {
+  float: right;
+  width: 45%;
+}
+
+@media screen and (max-width:700px) {
+  .izquierda, .derecha {
+    float:none;
+    width:90%;
+    margin: 0px auto;
+  }
+  .derecha{
+    margin-top: 10px;
+  }
+
+}
+
+main h4{
   margin: 10px;
   padding: 15px;
   text-align: center;
@@ -179,23 +211,37 @@ footer {
   border: 2px solid lavender;
 }
 
-.flex .columna_libros {
-  height: 800px;
-  background-color: navajowhite;
+main .contenedor_libros{
+  margin: 10px;
+  padding: 15px;
+  background-color: lavenderblush;
   border-radius: 5px;
-  border: 2px solid rgba(240, 40, 40, 0.712);
-  overflow: auto;
+  border: 2px solid rgb(245, 17, 17);
 }
 
-#derecha {
-  height: 800px;
-  background-color: navajowhite;
+main article{
+  margin: 10px;
+  padding: 15px;
+  background-color: lavenderblush;
   border-radius: 5px;
-  border: 2px solid rgba(240, 40, 40, 0.712);
-  overflow: auto;
+  border: 2px solid rgb(6, 245, 126);
+  display: flex;
+
 }
 
-#izquierda {
+article h5{
+  width: 50%;
+  padding: 10px;
+  text-align: right;
+  background-color: rgb(206, 41, 96);
+  border-radius: 5px;
+  border: 2px solid rgb(33, 33, 182);
+  
+}
+
+article img{
+  width: 20%;
+  margin: 0px;
   
 }
 
@@ -206,14 +252,7 @@ footer {
   border-radius: 15px;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
+
 
 .column, .columns {
   width: 100%;
@@ -221,14 +260,7 @@ footer {
   box-sizing: border-box;
 }
 
-/* For devices larger than 400px */
 
-@media (min-width: 400px) {
-  .container {
-    width: 85%;
-    padding: 0;
-  }
-}
 
 /* For devices larger than 550px */
 
