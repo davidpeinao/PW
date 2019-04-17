@@ -151,6 +151,9 @@ header {
     max-width: 1px;
     text-align: center;
   }
+  footer a{
+    font-size: 0.7em;
+  }
 }
 
 footer {
@@ -173,6 +176,8 @@ footer {
 
 main {
   margin: 0px auto;
+  display: flex;
+  justify-content: space-around;
 }
 
 .izquierda,
@@ -180,12 +185,12 @@ main {
   padding: 10px;
   background-color: navajowhite;
   border-radius: 5px;
-  overflow: auto;
 }
 
 .izquierda {
   float: left;
   width: 45%;
+  overflow: auto;
 }
 
 .derecha {
@@ -194,6 +199,10 @@ main {
 }
 
 @media screen and (max-width: 700px) {
+  main{
+    display: initial;
+  }
+
   .izquierda,
   .derecha {
     float: none;
@@ -202,6 +211,9 @@ main {
   }
   .derecha {
     margin-top: 10px;
+  }
+  .contenedor_libros h4{
+    font-size: 1.5em;
   }
 }
 
@@ -219,6 +231,10 @@ main .contenedor_libros {
   padding: 15px;
   background-color: lavenderblush;
   border-radius: 5px;
+}
+
+.contenedor_libros h4{
+  text-align: left;
 }
 
 main article {
@@ -507,11 +523,8 @@ a:hover {
   color: #0fa0ce;
 }
 
-a#alta {
-  position: absolute;
-  bottom: 0%;
-  color: #ce0f0f;
-  padding-left: 15%;
+a.alta {
+  color: #741f1f;
 }
 
 /* Utilities
