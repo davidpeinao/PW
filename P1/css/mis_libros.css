@@ -151,7 +151,7 @@ header {
     max-width: 1px;
     text-align: center;
   }
-  footer a{
+  footer a {
     font-size: 0.7em;
   }
 }
@@ -199,7 +199,7 @@ main {
 }
 
 @media screen and (max-width: 700px) {
-  main{
+  main {
     display: initial;
   }
 
@@ -212,7 +212,7 @@ main {
   .derecha {
     margin-top: 10px;
   }
-  .contenedor_libros h4{
+  .contenedor_libros h4 {
     font-size: 1.5em;
   }
 }
@@ -233,7 +233,7 @@ main .contenedor_libros {
   border-radius: 5px;
 }
 
-.contenedor_libros h4{
+.contenedor_libros h4 {
   text-align: left;
 }
 
