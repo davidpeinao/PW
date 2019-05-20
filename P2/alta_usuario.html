@@ -32,6 +32,37 @@
     <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <script>
+      function validarFormulario() {
+        var campos = ["usuario", "password", "repeatpassword", "urlimagen"];
+        for (campo of campos) {
+          if (document.forms["formulario-alta"][campo].value == "") {
+            alert("El campo " + campo + " debe ser rellenado");
+            return false;
+          }
+        }
+        var nombreUsuario = document.forms["formulario-alta"]["nickname"].value;
+        if (nombreUsuario.length < 4 || nombreUsuario.length > 25) {
+          alert(
+            "Tu nombre de usuario no puede contener menos de 4 caracteres ni mas de 25"
+          );
+          return false;
+        }
+
+        var password = document.forms["formulario-alta"]["password"].value;
+        if (password.length < 6) {
+          alert("Tu contraseña tiene que tener al menos 6 caracteres");
+          return false;
+        }
+        var repeatpassword =
+          document.forms["formulario-alta"]["repeatpassword"].value;
+        if (password != repeatpassword) {
+          alert("Las contraseñas que has introducido no son iguales");
+          return false;
+        }
+      }
+    </script>
   </head>
 
   <body>
@@ -71,24 +102,27 @@
     <main>
       <section class="container">
         <section class="container" id="metadata">
-          <form action="mis_libros.html" method="POST">
+          <form
+            class="formulario-alta"
+            name="formulario-alta"
+            action="procesar_formulario_alta.php"
+            method="POST"
+            onsubmit="return validarFormulario()"
+          >
             <label id="data">Usuario: </label>
-            <input class="u-full-width" name="Usuario" type="text" required />
+            <input class="u-full-width" name="usuario" type="text" required />
             <label id="data">Contraseña: </label>
+            <input class="u-full-width" name="password" type="text" required />
+            <label id="data">Repetir contr.: </label>
             <input
               class="u-full-width"
-              name="Contraseña"
+              name="repeatpassword"
               type="text"
               required
             />
-            <label id="data">Repetir contraseña: </label>
-            <input
-              class="u-full-width"
-              name="Repetir contraseña"
-              type="text"
-              required
-            />
-            <input type="submit" value="Registrarme" />
+            <label id="data">URL imagen de perfil: </label>
+            <input class="u-full-width" name="urlimagen" type="text" required />
+            <input type="submit" id="enviarFormulario" value="Registrarme" />
           </form>
         </section>
       </section>

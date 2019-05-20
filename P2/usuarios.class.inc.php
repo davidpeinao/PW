@@ -2,19 +2,19 @@
 require_once("dataObject.class.inc.php");
 class Usuario extends DataObject {
     protected $datos = array( 
-        "nickname" => null, 
+        "nombre" => null, 
         "password" => null,
         "email" => null, 
         "ciudad" => null,
         "frase_perfil" => null,
         "imagen_perfil" => null,
         ); 
-    public static function getUsuario($nickname) {
+    public static function getUsuario($nombre) {
         $conexion = parent::conectar();
-        $sql = "SELECT * FROM " . TABLA_USUARIOS . " WHERE nickname = :nickname";
+        $sql = "SELECT * FROM " . TABLA_USUARIOS . " WHERE nombre = :nombre";
         try {
             $st = $conexion->prepare($sql);
-            $st->bindValue(":nickname", $nickname);
+            $st->bindValue(":nombre", $nombre);
             $st->execute();
             $fila = $st->fetch();
             parent::desconectar($conexion);
@@ -26,7 +26,7 @@ class Usuario extends DataObject {
     }
     public static function crearUsuario($datosUsuario) {
         $conexion = parent::conectar();
-        $sql = "INSERT INTO " . TABLA_USUARIOS . " VALUES (:nickname, :password, :email, :ciudad,
+        $sql = "INSERT INTO " . TABLA_USUARIOS . " VALUES (:nombre, :password, :email, :ciudad,
             :frase_perfil, :imagen_perfil)";
         $sentencia = $conexion->prepare($sql);
         try {
@@ -49,10 +49,10 @@ class Usuario extends DataObject {
     }
     public static function validarLogin($usuario, $password) {
         $conexion = parent::conectar();
-        $sql = "SELECT * FROM " . TABLA_USUARIOS . " WHERE nickname = :nickname AND password = :password";
+        $sql = "SELECT * FROM " . TABLA_USUARIOS . " WHERE nombre = :nombre AND password = :password";
         try {
             $sentencia = $conexion->prepare($sql);
-            $sentencia->bindValue(":nickname", $usuario);
+            $sentencia->bindValue(":nombre", $usuario);
             $sentencia->bindValue(":password", hash('sha512', $password));
         
             $sentencia->execute();
@@ -78,10 +78,10 @@ class Usuario extends DataObject {
                                             ciudad = :ciudad,
                                             frase_perfil = :frase_perfil,
                                             imagen_perfil = :imagen_perfil
-                                            WHERE nickname = :nickname";
+                                            WHERE nombre = :nombre";
         try {
             $sentencia = $conexion->prepare($sql);           
-            $sentencia->bindValue(":nickname", $usuario);
+            $sentencia->bindValue(":nombre", $usuario);
             foreach($datosUsuario as $key => $value) {
                 if (!empty($value)){
                     $sentencia->bindValue(":".$key, $value);
