@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,31 +46,42 @@
           <h1 class="center titulo">Nombre de la aplicacion</h1>
         </section>
         <section class="three columns">
-          <form action="index2.html" method="POST">
-            <section class="row">
-              <section class="five columns">
-                <label>Usuario</label>
-                <input
-                  class="u-full-width"
-                  name="Usuario"
-                  type="text"
-                  required
-                />
+
+        <?php
+        if (!empty($_SESSION['nombre'])){
+            echo '<h5 class="center titulo">
+            Bienvenido/a ' . $_SESSION['nombre'] . ' <br />
+                <a href="logout.php">Desconectarse</a>
+              </h5>';
+        }
+        else {
+          echo '<form class="formulario-login" method="POST" action="login.php">
+          <section class="row">
+                <section class="five columns">
+                  <label>Usuario</label>
+                  <input
+                    class="u-full-width"
+                    name="usuario"
+                    type="text"
+                    required
+                  />
+                </section>
+                <section class="five columns">
+                  <label>Contraseña</label>
+                  <input
+                    class="u-full-width"
+                    name="password"
+                    type="password"
+                    required
+                  />
+                </section>
               </section>
-              <section class="five columns">
-                <label>Contraseña</label>
-                <input
-                  class="u-full-width"
-                  name="Contraseña"
-                  type="password"
-                  required
-                />
-              </section>
-            </section>
-            <br />
-            <input type="submit" value="Enviar" /><br />
-            <a href="alta_usuario.html">Formulario de registro</a>
-          </form>
+              <br />
+              <input type="submit" name="submitUsuario" value="Enviar" /><br />
+              <a href="alta_usuario.html">Formulario de registro</a>
+            </form>';
+        }
+    ?>
         </section>
       </section>
     </header>

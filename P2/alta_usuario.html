@@ -42,7 +42,7 @@
             return false;
           }
         }
-        var nombreUsuario = document.forms["formulario-alta"]["nickname"].value;
+        var nombreUsuario = document.forms["formulario-alta"]["usuario"].value;
         if (nombreUsuario.length < 4 || nombreUsuario.length > 25) {
           alert(
             "Tu nombre de usuario no puede contener menos de 4 caracteres ni mas de 25"
@@ -110,18 +110,13 @@
             onsubmit="return validarFormulario()"
           >
             <label id="data">Usuario: </label>
-            <input class="u-full-width" name="usuario" type="text" required />
+            <input class="u-full-width" name="usuario" type="text" />
             <label id="data">Contraseña: </label>
-            <input class="u-full-width" name="password" type="text" required />
+            <input class="u-full-width" name="password" type="password" />
             <label id="data">Repetir contr.: </label>
-            <input
-              class="u-full-width"
-              name="repeatpassword"
-              type="text"
-              required
-            />
+            <input class="u-full-width" name="repeatpassword" type="password" />
             <label id="data">URL imagen de perfil: </label>
-            <input class="u-full-width" name="urlimagen" type="text" required />
+            <input class="u-full-width" name="urlimagen" type="text" />
             <input type="submit" id="enviarFormulario" value="Registrarme" />
           </form>
         </section>

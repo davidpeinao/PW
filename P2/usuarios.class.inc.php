@@ -74,14 +74,23 @@ class Usuario extends DataObject {
     }
     public static function actualizarDatos($usuario, $datosUsuario) {
         $conexion = parent::conectar();
+        if($datosUsuario["newpassword"] == ""){
         $sql = "UPDATE " . TABLA_USUARIOS . " SET email = :email,
                                             ciudad = :ciudad,
                                             frase_perfil = :frase_perfil,
-                                            imagen_perfil = :imagen_perfil
                                             WHERE nombre = :nombre";
+        }
+        else {
+        $sql = "UPDATE " . TABLA_USUARIOS . " SET password = :newpassword,
+                                        email = :email,
+                                        ciudad = :ciudad,
+                                        frase_perfil = :frase_perfil,
+                                        WHERE nombre = :nombre";
+        }
         try {
             $sentencia = $conexion->prepare($sql);           
             $sentencia->bindValue(":nombre", $usuario);
+            $sentencia->bindValue(":newpassword", hash('sha512', $password));
             foreach($datosUsuario as $key => $value) {
                 if (!empty($value)){
                     $sentencia->bindValue(":".$key, $value);
