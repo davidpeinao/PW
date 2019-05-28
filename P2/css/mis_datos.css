@@ -137,7 +137,7 @@ footer {
   width: 100%;
   max-width: 1500px;
   background-color: navajowhite;
-  height: 620px;
+  height: 820px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -154,7 +154,7 @@ footer {
 
 .container#data {
   background-color: navajowhite;
-  height: 500px;
+  height: 700px;
   position: absolute;
   top: 30%;
   left: 5%;

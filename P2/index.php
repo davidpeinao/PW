@@ -38,7 +38,7 @@
     <header>
       <section>
         <section class="three columns">
-          <a href="index2.html">
+          <a href="index.php">
             <img alt="libro" id="logo" src="images/library.svg" />
           </a>
         </section>
@@ -52,39 +52,55 @@
             echo '<h5 class="center titulo">
             Bienvenido/a ' . $_SESSION['nombre'] . ' <br />
                 <a href="logout.php">Desconectarse</a>
-              </h5>';
+              </h5>
+              </section>
+            </section>
+            </header>
+            <!-- Navigation bar-->
+            <nav>
+              <ul>
+                <li class="different"><a href="mis_libros.php">Mis Libros</a></li>
+                <li class="different"><a href="mis_datos.php">Mis Datos</a></li>
+                <li class="different"><a href="foro.php">Foro</a></li>
+                <li class="different">
+                  <a href="recomendaciones_u1.php">Mis Recomendaciones</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- Navigation bar-->';
         }
         else {
           echo '<form class="formulario-login" method="POST" action="login.php">
-          <section class="row">
-                <section class="five columns">
-                  <label>Usuario</label>
-                  <input
-                    class="u-full-width"
-                    name="usuario"
-                    type="text"
-                    required
-                  />
+            <section class="row">
+                  <section class="five columns">
+                    <label>Usuario</label>
+                    <input
+                      class="u-full-width"
+                      name="usuario"
+                      type="text"
+                      required
+                    />
+                  </section>
+                  <section class="five columns">
+                    <label>Contraseña</label>
+                    <input
+                      class="u-full-width"
+                      name="password"
+                      type="password"
+                      required
+                    />
+                  </section>
                 </section>
-                <section class="five columns">
-                  <label>Contraseña</label>
-                  <input
-                    class="u-full-width"
-                    name="password"
-                    type="password"
-                    required
-                  />
-                </section>
+                <br />
+                <input type="submit" name="submitUsuario" value="Enviar" /><br />
+                <a href="alta_usuario.html">Formulario de registro</a>
+              </form>
               </section>
-              <br />
-              <input type="submit" name="submitUsuario" value="Enviar" /><br />
-              <a href="alta_usuario.html">Formulario de registro</a>
-            </form>';
+            </section>
+          </header>';
         }
     ?>
-        </section>
-      </section>
-    </header>
+
 
     <main>
       <section class="row">

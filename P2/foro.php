@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,7 +41,7 @@
     <header>
       <section class="row">
         <section class="three columns">
-          <a href="index2.html">
+          <a href="index.php">
             <img alt="libro" id="logo" src="images/library.svg" />
           </a>
         </section>
@@ -46,26 +49,59 @@
           <h1 class="center titulo">Nombre de la aplicacion</h1>
         </section>
         <section class="three columns">
-          <h5 class="center titulo">
-            Usuario <br />
-            <a href="index.html">Desconectarse</a>
-          </h5>
-        </section>
-      </section>
-    </header>
-
-    <!-- Navigation bar-->
-    <nav>
-      <ul>
-        <li class="different"><a href="mis_libros.html">Mis Libros</a></li>
-        <li class="different"><a href="mis_datos.html">Mis Datos</a></li>
-        <li class="different"><a href="foro.html">Foro</a></li>
-        <li class="different">
-          <a href="recomendaciones_u1.html">Mis Recomendaciones</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- Navigation bar-->
+            <?php
+            if (!empty($_SESSION['nombre'])){
+                echo '<h5 class="center titulo">
+                Bienvenido/a ' . $_SESSION['nombre'] . ' <br />
+                    <a href="logout.php">Desconectarse</a>
+                  </h5>
+                  </section>
+                </section>
+                </header>
+                <!-- Navigation bar-->
+                <nav>
+                  <ul>
+                    <li class="different"><a href="mis_libros.php">Mis Libros</a></li>
+                    <li class="different"><a href="mis_datos.php">Mis Datos</a></li>
+                    <li class="different"><a href="foro.php">Foro</a></li>
+                    <li class="different">
+                      <a href="recomendaciones_u1.php">Mis Recomendaciones</a>
+                    </li>
+                  </ul>
+                </nav>
+                <!-- Navigation bar-->';
+            }
+            else {
+              echo '<form class="formulario-login" method="POST" action="login.php">
+                <section class="row">
+                      <section class="five columns">
+                        <label>Usuario</label>
+                        <input
+                          class="u-full-width"
+                          name="usuario"
+                          type="text"
+                          required
+                        />
+                      </section>
+                      <section class="five columns">
+                        <label>Contraseña</label>
+                        <input
+                          class="u-full-width"
+                          name="password"
+                          type="password"
+                          required
+                        />
+                      </section>
+                    </section>
+                    <br />
+                    <input type="submit" name="submitUsuario" value="Enviar" /><br />
+                    <a href="alta_usuario.html">Formulario de registro</a>
+                  </form>
+                  </section>
+                </section>
+              </header>';
+            }
+        ?>
 
     <!-- Section-->
     <main>

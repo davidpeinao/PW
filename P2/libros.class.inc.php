@@ -1,20 +1,22 @@
 <?php
 require_once("dataObject.class.inc.php");
-class Usuario extends DataObject {
+class Libro extends DataObject {
     protected $datos = array( 
-        "nombre" => null, 
-        "password" => null,
-        "email" => null, 
-        "ciudad" => null,
-        "frase_perfil" => null,
-        "imagen_perfil" => null,
+        "titulo" => null, 
+        "autor" => null,
+        "editorial" => null, 
+        "anio" => null,
+        "edicion" => null,
+        "descripcion" => null,
+        "opinion" => null,
+        "valoracion" => null,
         ); 
-    public static function getUsuario($nombre) {
+    public static function getLibro($titulo) {
         $conexion = parent::conectar();
-        $sql = "SELECT * FROM " . TABLA_USUARIOS . " WHERE nickname = :nombre";
+        $sql = "SELECT * FROM " . TABLA_LIBROS . " WHERE titulo = :titulo";
         try {
             $st = $conexion->prepare($sql);
-            $st->bindValue(":nombre", $nombre);
+            $st->bindValue(":titulo", $titulo);
             $st->execute();
             $fila = $st->fetch();
             parent::desconectar($conexion);
@@ -26,7 +28,7 @@ class Usuario extends DataObject {
     }
     public static function crearUsuario($datosUsuario) {
         $conexion = parent::conectar();
-        $sql = "INSERT INTO " . TABLA_USUARIOS . " VALUES (:nombre, :password, :email, :ciudad,
+        $sql = "INSERT INTO " . TABLA_LIBROS . " VALUES (:nombre, :password, :email, :ciudad,
             :frase_perfil, :imagen_perfil)";
         $sentencia = $conexion->prepare($sql);
         try {
@@ -46,7 +48,7 @@ class Usuario extends DataObject {
     }
     public static function validarLogin($usuario, $password) {
         $conexion = parent::conectar();
-        $sql = "SELECT * FROM " . TABLA_USUARIOS . " WHERE nickname = :nombre AND password = :password";
+        $sql = "SELECT * FROM " . TABLA_LIBROS . " WHERE nickname = :nombre AND password = :password";
         try {
             $sentencia = $conexion->prepare($sql);
             $sentencia->bindValue(":nombre", $usuario);
@@ -71,28 +73,32 @@ class Usuario extends DataObject {
     }
     public static function actualizarDatos($usuario, $datosUsuario) {
         $conexion = parent::conectar();
-        if(empty($datosUsuario["newpassword"])){
-        $sql = "UPDATE " . TABLA_USUARIOS . " SET email = :email,
+        if($datosUsuario["newpassword"] == ""){
+        $sql = "UPDATE " . TABLA_LIBROS . " SET email = :email,
                                             ciudad = :ciudad,
-                                            frase_perfil = :frase_perfil
-                                            WHERE nickname = :nombre";
+                                            frase_perfil = :frase_perfil,
+                                            WHERE nombre = :nombre";
         }
         else {
-        $sql = "UPDATE " . TABLA_USUARIOS . " SET password = :newpassword,
+        $sql = "UPDATE " . TABLA_LIBROS . " SET password = :newpassword,
                                         email = :email,
                                         ciudad = :ciudad,
-                                        frase_perfil = :frase_perfil
-                                        WHERE nickname = :nombre";
+                                        frase_perfil = :frase_perfil,
+                                        WHERE nombre = :nombre";
         }
         try {
             $sentencia = $conexion->prepare($sql);           
             $sentencia->bindValue(":nombre", $usuario);
-            if(!empty($datosUsuario["newpassword"]))
-                $sentencia->bindValue(":newpassword", hash('sha512', $datosUsuario["newpassword"]));
-            $sentencia->bindValue(":email", $datosUsuario["email"]);
-            $sentencia->bindValue(":ciudad", $datosUsuario["ciudad"]);
-            $sentencia->bindValue(":frase_perfil", $datosUsuario["frase_perfil"]);
-            
+            $sentencia->bindValue(":newpassword", hash('sha512', $password));
+            foreach($datosUsuario as $key => $value) {
+                if (!empty($value)){
+                    $sentencia->bindValue(":".$key, $value);
+                }
+                else{
+                    $sentencia->bindValue(":".$key, null);
+                }
+                
+            }
             $sentencia->execute();
             parent::desconectar($conexion);
         } catch (PDOException $e) {

@@ -6,6 +6,7 @@
     $email = $usuario->getValor('email');
     $ciudad = $usuario->getValor('ciudad');
     $frase_perfil = $usuario->getValor('frase_perfil');
+    $imagen_perfil = $usuario->getValor('imagen_perfil');
 ?>
 
 <!DOCTYPE html>
@@ -46,25 +47,25 @@
     <script>
     function validarFormulario(){
         
-        if (document.forms["modificar-perfil"]["password"].value == ""){
+        if (document.forms["modificar-datos"]["password"].value == ""){
             alert("Debes introducir tu contraseña actual para validar los cambios");
             return false;
         }
         
-        var newpassword = document.forms["modificar-perfil"]["newpassword"].value;
+        var newpassword = document.forms["modificar-datos"]["newpassword"].value;
         if (newpassword.length != 0 && newpassword.length < 6) {
             alert("Tu nueva contraseña tiene que tener al menos 6 caracteres");
             return false;
         }
 
         var newpasswordrepeat =
-          document.forms["formulario-alta"]["newpasswordrepeat"].value;
-        if (newpassword.length != 0 && password != repeatpassword) {
+          document.forms["modificar-datos"]["newpasswordrepeat"].value;
+        if (newpassword.length != 0 && newpassword != newpasswordrepeat) {
             alert("Las contraseñas que has introducido no son iguales");
             return false;
         }
 
-        var email = document.forms["modificar-perfil"]["email"].value;
+        var email = document.forms["modificar-datos"]["email"].value;
         if (email.indexOf(' ') > -1){
             alert("Un email no puede contener espacios en blanco");
             return false;
@@ -83,7 +84,7 @@
     <header>
       <section class="row">
         <section class="three columns">
-          <a href="index2.html">
+          <a href="index.php">
             <img alt="libro" id="logo" src="images/library.svg" />
           </a>
         </section>
@@ -133,11 +134,11 @@
     <!-- Navigation bar-->
     <nav>
       <ul>
-        <li class="different"><a href="mis_libros.html">Mis Libros</a></li>
-        <li class="different"><a href="mis_datos.html">Mis Datos</a></li>
-        <li class="different"><a href="foro.html">Foro</a></li>
+        <li class="different"><a href="mis_libros.php">Mis Libros</a></li>
+        <li class="different"><a href="mis_datos.php">Mis Datos</a></li>
+        <li class="different"><a href="foro.php">Foro</a></li>
         <li class="different">
-          <a href="recomendaciones_u1.html">Mis Recomendaciones</a>
+          <a href="recomendaciones_u1.php">Mis Recomendaciones</a>
         </li>
       </ul>
     </nav>
@@ -147,6 +148,7 @@
     <main>
       <section class="container">
         <section class="container" id="metadata">
+        <img alt="libro" src="<?php echo $imagen_perfil ?>" />
           <form name="modificar-datos" onsubmit="return validarFormulario()" method="POST" action="modificar_datos.php">
             <label id="data">Contraseña: </label>
             <input
