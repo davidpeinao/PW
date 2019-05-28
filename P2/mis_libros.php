@@ -1,5 +1,7 @@
 <?php
+    include_once("libros.class.inc.php");
     session_start();
+    $filas = Libro::getLibros();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,6 +104,19 @@
       <section class="izquierda">
         <h4>Libros leídos</h4>
         <section class="contenedor_libros">
+        <?php
+
+            foreach($filas as $fila){
+              echo '<article>
+              <img alt="libro" src="images/libro1.jpg" />
+              <h5>
+                <a href="'. $fila["titulo"] . '.php"> '. $fila["titulo"] . '</a>
+                <br />
+                '. $fila["autor"] . '
+              </h5>
+            </article>';
+            }
+        ?>
           <article>
             <img alt="libro" src="images/libro1.jpg" />
             <h5>

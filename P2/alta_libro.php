@@ -35,6 +35,67 @@
     <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <script>
+      function validarFormulario() {
+        var campos = ["titulo", "autor", "anio", "edicion", "descripcion", "opinion" ];
+        for (campo of campos) {
+          if (document.forms["formulario-alta-libro"][campo].value == "") {
+            alert("El campo " + campo + " debe ser rellenado");
+            return false;
+          }
+        }
+        var titulo = document.forms["formulario-alta-libro"]["titulo"].value;
+        if (titulo.length > 100) {
+          alert(
+            "El campo " + titulo + " no puede contener mas de 100 caracteres "
+          );
+          return false;
+        }
+
+        var autor = document.forms["formulario-alta-libro"]["autor"].value;
+        if (autor.length > 50) {
+          alert(
+            "El campo " + campo + " no puede contener mas de 50 caracteres "
+          );
+          return false;
+        }
+
+        var anio = document.forms["formulario-alta-libro"]["anio"].value;
+        if (anio.length > 4 || isNaN(anio)) {
+          alert(
+            "El campo " + anio + " no puede contener mas de 4 caracteres y debe ser un numero"
+          );
+          return false;
+        }
+
+        var edicion = document.forms["formulario-alta-libro"]["edicion"].value;
+        if (edicion.length > 10) {
+          alert(
+            "El campo " + edicion + " no puede contener mas de 10 caracteres "
+          );
+          return false;
+        }
+
+        var descripcion = document.forms["formulario-alta-libro"]["descripcion"].value;
+        if (descripcion.length > 1000) {
+          alert(
+            "El campo " + descripcion + " no puede contener mas de 1000 caracteres "
+          );
+          return false;
+        }
+
+        var opinion = document.forms["formulario-alta-libro"]["opinion"].value;
+        if (opinion.length > 1000) {
+          alert(
+            "El campo " + opinion + " no puede contener mas de 1000 caracteres "
+          );
+          return false;
+        }
+
+      }
+    </script>
+
   </head>
 
   <body>
@@ -108,14 +169,20 @@
     <main>
       <section class="container">
         <img alt="libro" id="libro" src="images/libro1.jpg" />
-        <form action="mis_libros.php" method="POST">
+        <form
+            class="formulario-alta-libro"
+            name="formulario-alta-libro"
+            action="procesar_formulario_alta_libro.php"
+            method="POST"
+            onsubmit="return validarFormulario()"
+          >
           <section class="container" id="metadata">
             <label id="data">Titulo: </label>
-            <input class="u-full-width" name="Titulo" type="text" required />
+            <input class="u-full-width" name="titulo" type="text" required />
             <label id="data">Autor: </label>
-            <input class="u-full-width" name="Autor" type="text" required />
+            <input class="u-full-width" name="autor" type="text" required />
             <label id="data">Editorial: </label>
-            <select id="data" name="Editorial">
+            <select id="data" name="editorial">
               <option value="Editorial 1">Editorial 1</option>
               <option value="Editorial 2">Editorial 2</option>
               <option value="Editorial 3">Editorial 3</option>
@@ -123,9 +190,9 @@
               <option value="Editorial 5">Editorial 5</option>
             </select>
             <label id="data">Año: </label>
-            <input class="u-full-width" name="Año" type="number" required />
+            <input class="u-full-width" name="anio" type="number" required />
             <label id="data">Edición: </label>
-            <input class="u-full-width" name="Edición" type="text" required />
+            <input class="u-full-width" name="edicion" type="text" required />
           </section>
           <section class="container" id="data">
             <label id="data">Descripción:</label>
@@ -150,32 +217,34 @@
               <label>Mi valoración:</label>
               <section class="btns" id="valoracion">
                 <label>
-                  <input name="button-group" type="radio" value="item" />
+                  <input name="valoracion" type="radio" value="Pésimo" />
                   <span class="btn first">Pésimo</span>
                 </label>
                 <label>
-                  <input name="button-group" type="radio" value="other-item" />
+                  <input name="valoracion" type="radio" value="Malo" />
                   <span class="btn">Malo</span>
                 </label>
                 <label>
                   <input
                     checked
-                    name="button-group"
+                    name="valoracion"
                     type="radio"
-                    value="other-item"
+                    value="Bueno"
                   />
                   <span class="btn">Bueno</span>
                 </label>
                 <label>
-                  <input name="button-group" type="radio" value="third" />
+                  <input name="valoracion" type="radio" value="Muy bueno" />
                   <span class="btn">Muy bueno</span>
                 </label>
                 <label>
-                  <input name="button-group" type="radio" value="third" />
+                  <input name="valoracion" type="radio" value="Excelente" />
                   <span class="btn last">Excelente</span>
                 </label>
               </section>
+              <input type="hidden" name="creador" value="<?php echo $_SESSION['nombre'] ?>" />
               <input type="submit" value="Enviar" />
+              
             </section>
           </section>
         </form>
