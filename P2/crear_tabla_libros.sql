@@ -1,1 +1,0 @@
-CREATE TABLE Libros (    titulo varchar(100),    autor varchar(50),    editorial varchar(30),    anio varchar(4),    edicion varchar(10),    descripcion varchar(1000),    opinion varchar(1000),valoracion varchar(10),);
