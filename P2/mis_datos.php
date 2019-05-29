@@ -1,11 +1,15 @@
 <?php
     session_start();
     require_once('usuarios.class.inc.php');
+    include_once("libros.class.inc.php");
     $usuario = Usuario::getUsuario($_SESSION['nombre']);
     $password = $usuario->getValor('password');
     $email = $usuario->getValor('email');
     $ciudad = $usuario->getValor('ciudad');
     $frase_perfil = $usuario->getValor('frase_perfil');
+    $imagen_perfil = $usuario->getValor('imagen_perfil');
+    $libros = Libro::getLibrosUsuario($_SESSION['nombre']);
+
 ?>
 
 <!DOCTYPE html>
@@ -46,25 +50,25 @@
     <script>
     function validarFormulario(){
         
-        if (document.forms["modificar-perfil"]["password"].value == ""){
+        if (document.forms["modificar-datos"]["password"].value == ""){
             alert("Debes introducir tu contraseña actual para validar los cambios");
             return false;
         }
         
-        var newpassword = document.forms["modificar-perfil"]["newpassword"].value;
+        var newpassword = document.forms["modificar-datos"]["newpassword"].value;
         if (newpassword.length != 0 && newpassword.length < 6) {
             alert("Tu nueva contraseña tiene que tener al menos 6 caracteres");
             return false;
         }
 
         var newpasswordrepeat =
-          document.forms["formulario-alta"]["newpasswordrepeat"].value;
-        if (newpassword.length != 0 && password != repeatpassword) {
+          document.forms["modificar-datos"]["newpasswordrepeat"].value;
+        if (newpassword.length != 0 && newpassword != newpasswordrepeat) {
             alert("Las contraseñas que has introducido no son iguales");
             return false;
         }
 
-        var email = document.forms["modificar-perfil"]["email"].value;
+        var email = document.forms["modificar-datos"]["email"].value;
         if (email.indexOf(' ') > -1){
             alert("Un email no puede contener espacios en blanco");
             return false;
@@ -76,6 +80,8 @@
     }
     </script>
 
+    
+
 
   </head>
 
@@ -83,7 +89,7 @@
     <header>
       <section class="row">
         <section class="three columns">
-          <a href="index2.html">
+          <a href="index.php">
             <img alt="libro" id="logo" src="images/library.svg" />
           </a>
         </section>
@@ -133,11 +139,11 @@
     <!-- Navigation bar-->
     <nav>
       <ul>
-        <li class="different"><a href="mis_libros.html">Mis Libros</a></li>
-        <li class="different"><a href="mis_datos.html">Mis Datos</a></li>
-        <li class="different"><a href="foro.html">Foro</a></li>
+        <li class="different"><a href="mis_libros.php">Mis Libros</a></li>
+        <li class="different"><a href="mis_datos.php">Mis Datos</a></li>
+        <li class="different"><a href="foro.php">Foro</a></li>
         <li class="different">
-          <a href="recomendaciones_u1.html">Mis Recomendaciones</a>
+          <a href="recomendaciones_u1.php">Mis Recomendaciones</a>
         </li>
       </ul>
     </nav>
@@ -145,8 +151,27 @@
 
     <!-- Section-->
     <main>
-      <section class="container">
+      <section class="container" style="height:1200px;">
         <section class="container" id="metadata">
+          <section class="fila">
+            <img alt="libro" id="imagen" src="<?php echo $imagen_perfil ?>" />
+            <section class="ventanalibros" id="ventanalibros"
+              style="background-color:powderblue;
+                    padding:10px;
+                    margin:10px;
+                    display:none;">
+              Libros subidos por el usuario:
+              <?php
+                  foreach($libros as $libro){
+                    echo '
+                      <br />
+                      '. $libro["titulo"] . '
+                  ';
+                  }
+              ?>
+            </section>
+        </section>
+        
           <form name="modificar-datos" onsubmit="return validarFormulario()" method="POST" action="modificar_datos.php">
             <label id="data">Contraseña: </label>
             <input
@@ -201,4 +226,22 @@
       </h2>
     </footer>
   </body>
+
+
+
+  <script>
+      document.getElementById("imagen").addEventListener("mouseover", mouseOver);
+      document.getElementById("imagen").addEventListener("mouseout", mouseOut);
+      var ventana = document.getElementById("ventanalibros");
+
+      function mouseOver() {
+        ventana.style.display = "block";
+      }
+
+      function mouseOut() {
+        ventana.style.display = "none";
+      }
+    </script>
+
+
 </html>

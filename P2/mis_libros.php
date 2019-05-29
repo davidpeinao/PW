@@ -1,7 +1,8 @@
 <?php
+    include_once("libros.class.inc.php");
     session_start();
+    $filas = Libro::getLibros();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +15,7 @@
 
     <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -27,7 +28,7 @@
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/mis_libros.css" />
 
     <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -36,18 +37,16 @@
 
   <body>
     <header>
-      <section>
-        <section class="three columns">
-          <a href="index.php">
-            <img alt="libro" id="logo" src="images/library.svg" />
-          </a>
-        </section>
-        <section class="six columns">
-          <h1 class="center titulo">Nombre de la aplicacion</h1>
-        </section>
-        <section class="three columns">
-
-        <?php
+      <section class="columna">
+        <a href="index.php">
+          <img alt="logo" class="logo" src="images/library.svg" />
+        </a>
+      </section>
+      <section class="columna">
+        <h1 class="center titulo">Nombre de la aplicacion</h1>
+      </section>
+      <section class="columna">
+      <?php
         if (!empty($_SESSION['nombre'])){
             echo '<h5 class="center titulo">
             Bienvenido/a ' . $_SESSION['nombre'] . ' <br />
@@ -101,48 +100,76 @@
         }
     ?>
 
-
     <main>
-      <section class="row">
-        <section class="six columns" id="indexizquierda">
-          <img
-            id="fondo"
-            src="images/blur-book-stack-books-590493.jpg"
-            alt="libros"
-          />
+      <section class="izquierda">
+        <h4>Libros leídos</h4>
+        <section class="contenedor_libros">
+        <?php
+
+            foreach($filas as $fila){
+              echo '<article>
+              <img alt="libro" src="images/libro1.jpg" />
+              <h5>
+                <a href="'. $fila["titulo"] . '.php"> '. $fila["titulo"] . '</a>
+                <br />
+                '. $fila["autor"] . '
+              </h5>
+            </article>';
+            }
+        ?>
+          <article>
+            <img alt="libro" src="images/libro1.jpg" />
+            <h5>
+              <a href="libroleido1.html">El señor de los anillos parte 3 </a>
+              <br />
+              autor1
+            </h5>
+          </article>
+          <article>
+            <img alt="libro" src="images/libro2.jpg" />
+            <h5>
+              <a href="libroleido2.html">Libro 2 </a> <br />
+              autor2
+            </h5>
+          </article>
+          <article>
+            <img alt="libro" src="images/libro3.jpg" />
+            <h5>
+              libro3 <br />
+              autor3
+            </h5>
+          </article>
+          <article>
+            <img alt="libro" src="images/libro4.jpg" />
+            <h5>
+              libro4 <br />
+              autor4
+            </h5>
+          </article>
+          <article>
+            <img alt="libro" src="images/libro5.jpg" />
+            <h5>
+              libro5 <br />
+              autor5
+            </h5>
+          </article>
         </section>
-        <!-- Book column-->
-        <section class="six columns" id="indexderecha">
-          <h1 class="center">Libros mejor valorados</h1>
-          <section class="row">
-            <article class="five columns">
-              <img alt="libro" src="images/book-1424031.jpg" />
-            </article>
-            <article class="six columns" id="librosindex">
-              <h5 class="right">Titulo 1</h5>
-              <h5 class="right">Autor 1</h5>
-            </article>
-          </section>
-          <section class="row">
-            <article class="five columns">
-              <img alt="libro" src="images/book-1424031.jpg" />
-            </article>
-            <article class="six columns" id="librosindex">
-              <h5 class="right">Titulo 1</h5>
-              <h5 class="right">Autor 1</h5>
-            </article>
-          </section>
-          <section class="row">
-            <article class="five columns">
-              <img alt="libro" src="images/book-1424031.jpg" />
-            </article>
-            <article class="six columns" id="librosindex">
-              <h5 class="right">Titulo 1</h5>
-              <h5 class="right">Autor 1</h5>
-            </article>
-          </section>
+      </section>
+
+      <section class="derecha">
+        <h4>Últimos libros</h4>
+        <section class="contenedor_libros">
+          <h4>
+            <a href="libro1.html">Titulo libro 1</a><br />
+            <a href="libro2.html">Titulo libro 2</a><br />
+            <a href="#">Titulo libro 3</a><br />
+          </h4>
+          <h5>
+            <a href="alta_libro.php" class="alta"
+              >Dar de alta un nuevo libro</a
+            >
+          </h5>
         </section>
-        <!-- Book column-->
       </section>
     </main>
 
