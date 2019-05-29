@@ -143,10 +143,21 @@ footer {
   box-sizing: border-box;
 }
 
+.fila {
+  display: block;
+}
+
+.ventanalibros {
+  background: #0fa0ce;
+  height: 200px;
+  width: 200px;
+  overflow: auto;
+}
+
 .container#metadata {
   max-width: 550px;
   background-color: navajowhite;
-  height: 200px;
+  height: 300px;
   position: absolute;
   top: 5%;
   left: 35%;
@@ -154,7 +165,7 @@ footer {
 
 .container#data {
   background-color: navajowhite;
-  height: 700px;
+  height: 800px;
   position: absolute;
   top: 30%;
   left: 5%;

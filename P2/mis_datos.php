@@ -1,12 +1,15 @@
 <?php
     session_start();
     require_once('usuarios.class.inc.php');
+    include_once("libros.class.inc.php");
     $usuario = Usuario::getUsuario($_SESSION['nombre']);
     $password = $usuario->getValor('password');
     $email = $usuario->getValor('email');
     $ciudad = $usuario->getValor('ciudad');
     $frase_perfil = $usuario->getValor('frase_perfil');
     $imagen_perfil = $usuario->getValor('imagen_perfil');
+    $libros = Libro::getLibrosUsuario($_SESSION['nombre']);
+
 ?>
 
 <!DOCTYPE html>
@@ -77,6 +80,8 @@
     }
     </script>
 
+    
+
 
   </head>
 
@@ -146,9 +151,27 @@
 
     <!-- Section-->
     <main>
-      <section class="container">
+      <section class="container" style="height:1200px;">
         <section class="container" id="metadata">
-        <img alt="libro" src="<?php echo $imagen_perfil ?>" />
+          <section class="fila">
+            <img alt="libro" id="imagen" src="<?php echo $imagen_perfil ?>" />
+            <section class="ventanalibros" id="ventanalibros"
+              style="background-color:powderblue;
+                    padding:10px;
+                    margin:10px;
+                    display:none;">
+              Libros subidos por el usuario:
+              <?php
+                  foreach($libros as $libro){
+                    echo '
+                      <br />
+                      '. $libro["titulo"] . '
+                  ';
+                  }
+              ?>
+            </section>
+        </section>
+        
           <form name="modificar-datos" onsubmit="return validarFormulario()" method="POST" action="modificar_datos.php">
             <label id="data">Contraseña: </label>
             <input
@@ -203,4 +226,22 @@
       </h2>
     </footer>
   </body>
+
+
+
+  <script>
+      document.getElementById("imagen").addEventListener("mouseover", mouseOver);
+      document.getElementById("imagen").addEventListener("mouseout", mouseOut);
+      var ventana = document.getElementById("ventanalibros");
+
+      function mouseOver() {
+        ventana.style.display = "block";
+      }
+
+      function mouseOut() {
+        ventana.style.display = "none";
+      }
+    </script>
+
+
 </html>
