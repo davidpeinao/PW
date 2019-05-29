@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8" />
+    <title>Indice</title>
+    <meta name="description" content="Indice" />
+    <meta name="author" content="David Peinado" />
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="css/alta_usuario.css" />
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <script>
+      function validarFormulario() {
+        var campos = ["usuario", "password", "repeatpassword", "urlimagen"];
+        for (campo of campos) {
+          if (document.forms["formulario-alta"][campo].value == "") {
+            alert("El campo " + campo + " debe ser rellenado");
+            return false;
+          }
+        }
+        var nombreUsuario = document.forms["formulario-alta"]["usuario"].value;
+        if (nombreUsuario.length < 4 || nombreUsuario.length > 25) {
+          alert(
+            "Tu nombre de usuario no puede contener menos de 4 caracteres ni mas de 25"
+          );
+          return false;
+        }
+
+        var password = document.forms["formulario-alta"]["password"].value;
+        if (password.length < 6) {
+          alert("Tu contraseña tiene que tener al menos 6 caracteres");
+          return false;
+        }
+        var repeatpassword =
+          document.forms["formulario-alta"]["repeatpassword"].value;
+        if (password != repeatpassword) {
+          alert("Las contraseñas que has introducido no son iguales");
+          return false;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <section class="row">
+        <section class="three columns">
+          <a href="index.php">
+            <img alt="libro" id="logo" src="images/library.svg" />
+          </a>
+        </section>
+        <section class="six columns">
+          <h1 class="center titulo">Nombre de la aplicacion</h1>
+        </section>
+        <section class="three columns">
+          <h5 class="center titulo">
+            Usuario <br />
+            <a href="index.php">Desconectarse</a>
+          </h5>
+        </section>
+      </section>
+    </header>
+
+    <!-- Navigation bar-->
+    <nav>
+      <ul>
+        <li class="different"><a href="mis_libros.php">Mis Libros</a></li>
+        <li class="different"><a href="mis_datos.php">Mis Datos</a></li>
+        <li class="different"><a href="foro.php">Foro</a></li>
+        <li class="different">
+          <a href="recomendaciones_u1.php">Mis Recomendaciones</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Navigation bar-->
+
+    <!-- Section-->
+    <main>
+      <section class="container">
+        <section class="container" id="metadata">
+          <form
+            class="formulario-alta"
+            name="formulario-alta"
+            action="procesar_formulario_alta.php"
+            method="POST"
+            onsubmit="return validarFormulario()"
+          >
+            <label id="data">Usuario: </label>
+            <input class="u-full-width" name="usuario" type="text" />
+            <label id="data">Contraseña: </label>
+            <input class="u-full-width" name="password" type="password" />
+            <label id="data">Repetir contr.: </label>
+            <input class="u-full-width" name="repeatpassword" type="password" />
+            <label id="data">URL imagen de perfil: </label>
+            <input class="u-full-width" name="urlimagen" type="text" />
+            <input type="submit" id="enviarFormulario" value="Registrarme" />
+          </form>
+        </section>
+      </section>
+    </main>
+    <!-- Section-->
+
+    <footer>
+      <h2>
+        <a href="mailto:davidpeinado@correo.ugr.es">Contacto</a> -
+        <a href="como_se_hizo.pdf">Como se hizo</a>
+      </h2>
+    </footer>
+  </body>
+</html>
