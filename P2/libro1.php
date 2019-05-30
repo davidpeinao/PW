@@ -1,7 +1,14 @@
 <?php
     include_once("libros.class.inc.php");
     session_start();
-    $filas = Libro::getLibros();
+    $libro = Libro::getLibro($_GET['tituloLibro']);
+    $titulo = $usuario->getValor('titulo');
+    $autor = $usuario->getValor('titulo');
+    $editorial = $usuario->getValor('titulo');
+    $anio = $usuario->getValor('titulo');
+    $edicion = $usuario->getValor('titulo');
+    $descripcion = $usuario->getValor('titulo');
+    $opinion = $usuario->getValor('titulo');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +22,7 @@
 
     <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -28,7 +35,11 @@
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/mis_libros.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="css/libro.css" />
 
     <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -37,16 +48,17 @@
 
   <body>
     <header>
-      <section class="columna">
-        <a href="index.php">
-          <img alt="logo" class="logo" src="images/library.svg" />
-        </a>
-      </section>
-      <section class="columna">
-        <h1 class="center titulo">Nombre de la aplicacion</h1>
-      </section>
-      <section class="columna">
-      <?php
+      <section class="row">
+        <section class="three columns">
+          <a href="index.php">
+            <img alt="libro" id="logo" src="images/library.svg" />
+          </a>
+        </section>
+        <section class="six columns">
+          <h1 class="center titulo">Nombre de la aplicacion</h1>
+        </section>
+        <section class="three columns">
+          <?php
         if (!empty($_SESSION['nombre'])){
             echo '<h5 class="center titulo">
             Bienvenido/a ' . $_SESSION['nombre'] . ' <br />
@@ -100,78 +112,60 @@
         }
     ?>
 
+    <!-- Section-->
     <main>
-      <section class="izquierda">
-        <h4>Libros leídos</h4>
-        <section class="contenedor_libros">
-        <?php
-
-            foreach($filas as $fila){
-              echo '<article>
-              <img alt="libro" src="images/libro1.jpg" />
-              <h5>
-                <a href="libroleido1.php?tituloLibro=' . $fila["titulo"] . '"> '. $fila["titulo"] . '</a>
-                <br />
-                '. $fila["autor"] . '
-              </h5>
-            </article>';
-            }
-        ?>
-          <article>
-            <img alt="libro" src="images/libro1.jpg" />
-            <h5>
-              <a href="libroleido1.html">El señor de los anillos parte 3 </a>
-              <br />
-              autor1
-            </h5>
-          </article>
-          <article>
-            <img alt="libro" src="images/libro2.jpg" />
-            <h5>
-              <a href="libroleido2.html">Libro 2 </a> <br />
-              autor2
-            </h5>
-          </article>
-          <article>
-            <img alt="libro" src="images/libro3.jpg" />
-            <h5>
-              libro3 <br />
-              autor3
-            </h5>
-          </article>
-          <article>
-            <img alt="libro" src="images/libro4.jpg" />
-            <h5>
-              libro4 <br />
-              autor4
-            </h5>
-          </article>
-          <article>
-            <img alt="libro" src="images/libro5.jpg" />
-            <h5>
-              libro5 <br />
-              autor5
-            </h5>
-          </article>
-        </section>
-      </section>
-
-      <section class="derecha">
-        <h4>Últimos libros</h4>
-        <section class="contenedor_libros">
-          <h4>
-            <a href="libro1.html">Titulo libro 1</a><br />
-            <a href="libro2.html">Titulo libro 2</a><br />
-            <a href="#">Titulo libro 3</a><br />
-          </h4>
+      <section class="container">
+        <img alt="libro" id="libro" src="images/libro4.jpg" />
+        <section class="container" id="metadata">
           <h5>
-            <a href="alta_libro.php" class="alta"
-              >Dar de alta un nuevo libro</a
-            >
+            <span>Titulo: </span><span><?php echo ?></span><br />
+            <span>Autor: </span><span><?php echo  ?></span><br />
+            <span>Editorial: </span><span><?php echo  ?></span><br />
+            <span>Año: </span><span><?php echo  ?></span><br />
+            <span>Edición: </span><span><?php echo  ?></span>
           </h5>
+        </section>
+        <section class="container" id="data">
+          <label>Descripción:</label>
+          <textarea readonly id="descripcion" name="descripcion" rows="20">
+        Aquí va la descripción.
+      </textarea
+          >
+          <h5><span>Valoración media: </span><span>X</span></h5>
+          <h5>Opiniones:</h5>
+          <section class="grid-container">
+            <section class="grid-item">
+              Usuario <br />
+              Opinion
+            </section>
+            <section class="grid-item">
+              Usuario <br />
+              Opinion
+            </section>
+            <section class="grid-item">
+              Usuario <br />
+              Opinion
+            </section>
+            <section class="grid-item">
+              Usuario <br />
+              Opinion
+            </section>
+            <section class="grid-item">
+              Usuario <br />
+              Opinion
+            </section>
+            <section class="grid-item">
+              Usuario <br />
+              Opinion
+            </section>
+            <a href="#">Anterior</a>
+            <a href="valoracion_libro1.php">Valorar libro</a>
+            <a href="#">Siguiente</a>
+          </section>
         </section>
       </section>
     </main>
+    <!-- Section-->
 
     <footer>
       <h2>

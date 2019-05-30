@@ -27,6 +27,22 @@ class Libro extends DataObject {
         }
     }
 
+    public static function getLibro($tituloLibro) {
+      $conexion = parent::conectar();
+      $sql = "SELECT * FROM " . TABLA_LIBROS . " WHERE titulo = :tituloLibro ";
+      try {
+          $st = $conexion->prepare($sql);
+          $st->bindValue(":tituloLibro", $tituloLibro);
+          $st->execute();
+          $fila = $st->fetch();
+          parent::desconectar($conexion);
+          if ($fila) return new Libro ($fila);
+      } catch (PDOException $e) {
+          parent::desconectar($conexion);
+          die("Consulta fallida: ".$e->getMessage());
+      }
+  }
+
     public static function getLibrosUsuario($usuario) {
       $conexion = parent::conectar();
       $sql = "SELECT * FROM " . TABLA_LIBROS . " WHERE creador = :usuario ";

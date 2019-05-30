@@ -1,7 +1,14 @@
 <?php
-    include_once("libros.class.inc.php");
     session_start();
-    $filas = Libro::getLibros();
+    include_once("libros.class.inc.php");
+    $libro = Libro::getLibro($_GET['tituloLibro']);
+    $titulo = $libro->getValor('titulo');
+    $autor = $libro->getValor('autor');
+    $editorial = $libro->getValor('editorial');
+    $anio = $libro->getValor('anio');
+    $edicion = $libro->getValor('edicion');
+    $descripcion = $libro->getValor('descripcion');
+    $opinion = $libro->getValor('opinion');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +22,7 @@
 
     <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -28,7 +35,11 @@
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/mis_libros.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="css/libro_leido.css" />
 
     <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -37,16 +48,17 @@
 
   <body>
     <header>
-      <section class="columna">
-        <a href="index.php">
-          <img alt="logo" class="logo" src="images/library.svg" />
-        </a>
-      </section>
-      <section class="columna">
-        <h1 class="center titulo">Nombre de la aplicacion</h1>
-      </section>
-      <section class="columna">
-      <?php
+      <section class="row">
+        <section class="three columns">
+          <a href="index.php">
+            <img alt="libro" id="logo" src="images/library.svg" />
+          </a>
+        </section>
+        <section class="six columns">
+          <h1 class="center titulo">Nombre de la aplicacion</h1>
+        </section>
+        <section class="three columns">
+        <?php
         if (!empty($_SESSION['nombre'])){
             echo '<h5 class="center titulo">
             Bienvenido/a ' . $_SESSION['nombre'] . ' <br />
@@ -100,78 +112,60 @@
         }
     ?>
 
+    <!-- Section-->
     <main>
-      <section class="izquierda">
-        <h4>Libros leídos</h4>
-        <section class="contenedor_libros">
-        <?php
-
-            foreach($filas as $fila){
-              echo '<article>
-              <img alt="libro" src="images/libro1.jpg" />
-              <h5>
-                <a href="libroleido1.php?tituloLibro=' . $fila["titulo"] . '"> '. $fila["titulo"] . '</a>
-                <br />
-                '. $fila["autor"] . '
-              </h5>
-            </article>';
-            }
-        ?>
-          <article>
-            <img alt="libro" src="images/libro1.jpg" />
-            <h5>
-              <a href="libroleido1.html">El señor de los anillos parte 3 </a>
-              <br />
-              autor1
-            </h5>
-          </article>
-          <article>
-            <img alt="libro" src="images/libro2.jpg" />
-            <h5>
-              <a href="libroleido2.html">Libro 2 </a> <br />
-              autor2
-            </h5>
-          </article>
-          <article>
-            <img alt="libro" src="images/libro3.jpg" />
-            <h5>
-              libro3 <br />
-              autor3
-            </h5>
-          </article>
-          <article>
-            <img alt="libro" src="images/libro4.jpg" />
-            <h5>
-              libro4 <br />
-              autor4
-            </h5>
-          </article>
-          <article>
-            <img alt="libro" src="images/libro5.jpg" />
-            <h5>
-              libro5 <br />
-              autor5
-            </h5>
-          </article>
-        </section>
-      </section>
-
-      <section class="derecha">
-        <h4>Últimos libros</h4>
-        <section class="contenedor_libros">
-          <h4>
-            <a href="libro1.html">Titulo libro 1</a><br />
-            <a href="libro2.html">Titulo libro 2</a><br />
-            <a href="#">Titulo libro 3</a><br />
-          </h4>
+      <section class="container">
+        <img alt="libro" id="libro" src="images/libro1.jpg" />
+        <section class="container" id="metadata">
           <h5>
-            <a href="alta_libro.php" class="alta"
-              >Dar de alta un nuevo libro</a
-            >
+            <span>Titulo: </span><span><?php echo $titulo?></span><br />
+            <span>Autor: </span><span><?php echo $autor?></span><br />
+            <span>Editorial: </span><span><?php echo $editorial?></span><br />
+            <span>Año: </span><span><?php echo $anio?></span><br />
+            <span>Edición: </span><span><?php echo $edicion?></span>
           </h5>
+        </section>
+        <section class="container" id="data">
+          <label>Descripción:</label>
+          <textarea readonly id="descripcion" name="descripcion" rows="20">
+          <?php echo $descripcion?>
+      </textarea
+          >
+          <label>Opinión:</label>
+          <textarea readonly id="opinion" name="opinion" rows="20">
+          <?php echo $opinion?>
+      </textarea
+          >
+
+          <section class="vertical-align">
+            <label>Mi valoración:</label>
+            <section class="btns" id="valoracion">
+              <label>
+                <input name="button-group" type="radio" />
+                <span class="btn first">Pésimo</span>
+              </label>
+              <label>
+                <input name="button-group" type="radio" />
+                <span class="btn">Malo</span>
+              </label>
+              <label>
+                <input checked name="button-group" type="radio" />
+                <span class="btn">Bueno</span>
+              </label>
+              <label>
+                <input name="button-group" type="radio" />
+                <span class="btn">Muy bueno</span>
+              </label>
+              <label>
+                <input name="button-group" type="radio" />
+                <span class="btn last">Excelente</span>
+              </label>
+            </section>
+          </section>
         </section>
       </section>
     </main>
+    <!-- Section-->
 
     <footer>
       <h2>
